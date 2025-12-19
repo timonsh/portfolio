@@ -1,2 +1,8 @@
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://timonsh.dev/sitemap.xml
+
+# Crawl-Delay für schonende Indexierung
+Crawl-delay: 1

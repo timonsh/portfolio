@@ -28,6 +28,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
     :root {
         --clr-background: #0d1117;
         --clr-background-full-transparent: #0d111700;
@@ -51,131 +52,94 @@
         --clr-buymeacoffee: #ffd60a;
     }
 
-    /* Navigation fixes for dark mode */
-    #navigation>button {
-        border: 1px solid rgba(48, 54, 61, 0.6) !important;
-        background: var(--clr-surface-dark) !important;
+    /* Navigation */
+    #navigation {
+        background: linear-gradient(135deg, rgba(30, 35, 45, 0.75) 0%, rgba(20, 25, 35, 0.65) 100%) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    #navigation>button,
+    #navigation>.nav-support-btn {
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.04) 100%) !important;
         color: var(--clr-font) !important;
-        box-shadow:
-            0 1px 2px rgba(0, 0, 0, 0.3),
-            inset 0 1px 0 rgba(48, 54, 61, 0.4),
-            0 2px 6px rgba(0, 0, 0, 0.5) !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
     }
 
-    #navigation>button:hover {
-        background: var(--clr-highlight) !important;
-        box-shadow:
-            0 2px 4px rgba(0, 0, 0, 0.4),
-            inset 0 1px 0 rgba(48, 54, 61, 0.5),
-            0 4px 8px rgba(0, 0, 0, 0.6) !important;
+    #navigation>button:hover,
+    #navigation>.nav-support-btn:hover {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.08) 100%) !important;
+        border-color: rgba(255, 255, 255, 0.2) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
     }
 
-    /* Card/surface elements */
-    .card, .surface {
-        background-color: var(--clr-surface-dark) !important;
-        border: 1px solid var(--clr-highlight) !important;
-    }
-
-    /* Any white backgrounds */
-    [style*="background: white"], [style*="background-color: white"], [style*="background: #fff"], [style*="background-color: #fff"] {
-        background: var(--clr-surface-dark) !important;
-    }
-
-    /* Any black text on light backgrounds */
-    [style*="color: black"], [style*="color: #000"] {
-        color: var(--clr-font-strong) !important;
-    }
-
-    /* Fix hardcoded box-shadow colors */
-    #introduction>div:first-of-type img {
-    box-shadow: 0 0 32px 0 #1b5e20, 0 0 8px 2px #388e3c !important;
-    }
-
-    /* Forms and inputs */
-    input, textarea, select {
-        background-color: var(--clr-surface-dark) !important;
-        color: var(--clr-font-strong) !important;
-        border: 1px solid var(--clr-highlight) !important;
-    }
-
-    /* Links that might be hard to see */
-    a {
-        color: var(--clr-primary) !important;
-    }
-
-    a:hover {
-        color: var(--clr-secondary) !important;
-    }
-
-    /* Any sections or containers */
-    section, .container, .content {
-        background-color: transparent !important;
-    }
-
-    /* Project buttons - make them clearly visible */
-    #project-overview .dunkle-geschichten>div>a {
-        background-color: var(--clr-dunkle-geschichten) !important;
-        color: #ffffff !important;
-        font-weight: 600 !important;
-    }
-
-    #project-overview .dunkle-geschichten>div>a:hover {
-        background-color: var(--clr-primary) !important;
-        color: #ffffff !important;
-    }
-
-    /* WebByte Studio project buttons */
-    #project-overview>section>article>div>a {
-        background-color: var(--clr-webbytestudio) !important;
-        color: #ffffff !important;
-        font-weight: 600 !important;
-    }
-
-    #project-overview>section>article>div>a:hover {
-        background-color: var(--clr-primary) !important;
-        color: #ffffff !important;
-    }
-
-    /* All primary buttons should have high contrast */
-    .primary-btn {
-        background-color: var(--clr-primary) !important;
-        color: #ffffff !important;
-        font-weight: 600 !important;
-    }
-
-    .primary-btn:hover {
-        background-color: var(--clr-secondary) !important;
-        color: #ffffff !important;
-    }
-
-    /* Secondary buttons should also be visible */
-    .secondary-btn {
-        background-color: var(--clr-surface-dark) !important;
-        color: var(--clr-font-strong) !important;
-        border: 2px solid var(--clr-primary) !important;
-        font-weight: 600 !important;
-    }
-
-    .secondary-btn:hover {
-        background-color: var(--clr-primary) !important;
-        color: #ffffff !important;
-        border-color: var(--clr-primary) !important;
-    }
-
-    /* Navigation text should be bright */
     #navigation, #navigation * {
         color: var(--clr-font-strong) !important;
     }
 
-    /* All headings should be bright */
+    /* Profile Image Glow */
+    #introduction>div:first-of-type img {
+        box-shadow: 0 0 32px 0 #1a237e, 0 0 8px 2px #00bcd4 !important;
+    }
+
+    /* Project Buttons */
+    #project-overview .dunkle-geschichten>div>a {
+        background: linear-gradient(135deg, rgba(49, 186, 205, 0.75) 0%, rgba(35, 160, 180, 0.6) 100%) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.35) !important;
+        color: #ffffff !important;
+        font-weight: 600 !important;
+        box-shadow: 0 2px 12px rgba(49, 186, 205, 0.25) !important;
+    }
+
+    #project-overview .dunkle-geschichten>div>a:hover {
+        background: linear-gradient(135deg, rgba(49, 186, 205, 0.9) 0%, rgba(35, 160, 180, 0.75) 100%) !important;
+        border-color: rgba(255, 255, 255, 0.5) !important;
+        box-shadow: 0 4px 20px rgba(49, 186, 205, 0.35) !important;
+    }
+
+    /* Buttons */
+    .primary-btn {
+        background: linear-gradient(135deg, rgba(5, 130, 255, 0.25) 0%, rgba(5, 130, 255, 0.12) 100%) !important;
+        color: var(--clr-font-strong) !important;
+        font-weight: 500 !important;
+        border: 1px solid rgba(5, 130, 255, 0.4) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+    }
+
+    .primary-btn:hover {
+        background: linear-gradient(135deg, rgba(5, 130, 255, 0.35) 0%, rgba(5, 130, 255, 0.18) 100%) !important;
+        color: var(--clr-font-strong) !important;
+        border-color: rgba(5, 130, 255, 0.55) !important;
+    }
+
+    .secondary-btn {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%) !important;
+        color: var(--clr-font-strong) !important;
+        border: 1px solid rgba(255, 255, 255, 0.18) !important;
+        font-weight: 500 !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+    }
+
+    .secondary-btn:hover {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.06) 100%) !important;
+        color: var(--clr-font-strong) !important;
+        border-color: rgba(255, 255, 255, 0.3) !important;
+    }
+
+    /* Typography */
     h1, h2, h3, h4, h5, h6 {
         color: var(--clr-font-strong) !important;
     }
 
-    /* All paragraphs should be readable */
     p {
         color: var(--clr-font) !important;
     }
+
 }
 
 body {
@@ -191,6 +155,41 @@ body {
     font-family: "Gilroy", Helvetica, Arial, sans-serif;
     scroll-behavior: smooth;
 }
+
+/* Scroll Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+}
+
+.animate-on-scroll.visible {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-on-scroll.visible.delay-1 { animation-delay: 0.1s; }
+.animate-on-scroll.visible.delay-2 { animation-delay: 0.2s; }
+.animate-on-scroll.visible.delay-3 { animation-delay: 0.3s; }
 
 main {
     width: 100%;
@@ -227,65 +226,84 @@ button {
 .primary-btn {
     width: auto;
     min-width: 85px;
-    height: 37.5px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    background-color: var(--clr-surface-dark);
-    color: var(--clr-base);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    background: linear-gradient(135deg, rgba(5, 130, 255, 0.22) 0%, rgba(5, 130, 255, 0.1) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--clr-font-strong);
     font-size: .9rem;
+    font-weight: 500;
     text-decoration: none;
-    border-radius: 20px;
-    border: none;
-    box-shadow: 0 3px 6px var(--clr-surface-medium);
+    border-radius: 18px;
+    border: 1px solid rgba(5, 130, 255, 0.35);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.25s ease;
 }
 
 .secondary-btn {
     width: auto;
     min-width: 85px;
-    height: 37.5px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    background-color: var(--clr-base-transparent);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: var(--clr-font-strong);
     font-size: .9rem;
+    font-weight: 500;
     text-decoration: none;
-    border-radius: 20px;
-    border: 1.85px solid var(--clr-highlight);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s ease;
 }
 
 .primary-btn:hover {
-    background-color: var(--clr-primary);
-    color: var(--clr-base);
-    box-shadow: 0 6px 12px var(--clr-light-shadow);
+    background: linear-gradient(135deg, rgba(5, 130, 255, 0.32) 0%, rgba(5, 130, 255, 0.15) 100%);
+    border-color: rgba(5, 130, 255, 0.5);
+    box-shadow: 0 4px 12px rgba(5, 130, 255, 0.15);
+    transform: translateY(-1px);
     cursor: pointer;
-    transition: all 0.2s ease;
 }
 
 .secondary-btn:hover {
-    background-color: var(--clr-secondary);
-    color: var(--clr-base);
-    border-color: var(--clr-secondary);
-    box-shadow: 0 6px 12px var(--clr-light-shadow);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
     cursor: pointer;
-    transition: all 0.2s ease;
 }
 
 .highlight {
     height: 32.5px;
     display: inline-block;
-    padding: .3rem .3rem 0 .3rem;
+    padding: .3rem .5rem 0 .5rem;
     margin-top: .15rem;
     margin-bottom: .15rem;
     font-weight: bold;
     color: var(--clr-font-strong);
-    background-color: var(--clr-highlight);
-    border-radius: 7.5px;
+    background: linear-gradient(135deg, rgba(5, 130, 255, 0.15) 0%, rgba(5, 130, 255, 0.08) 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(5, 130, 255, 0.2);
+    border-radius: 10px;
+    transition: all 0.25s ease;
+}
+
+.highlight:hover {
+    background: linear-gradient(135deg, rgba(5, 130, 255, 0.25) 0%, rgba(5, 130, 255, 0.15) 100%);
+    border-color: rgba(5, 130, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(5, 130, 255, 0.2);
 }
 
 /* Navigation */
@@ -320,8 +338,11 @@ button {
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
-    background-color: var(--clr-surface-dark);
-    box-shadow: 0 2px 12.5px var(--clr-surface-medium);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     border-radius: 50px;
 }
 
@@ -337,35 +358,62 @@ button {
 #navigation>a {
     text-decoration: none;
     font-size: .85rem;
-    transition: .25s;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+#navigation>a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--clr-primary);
+    transition: all 0.25s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+#navigation>a:hover::after,
+#navigation>a.active::after {
+    width: 100%;
+}
+
+#navigation>.nav-support-btn::after {
+    display: none;
 }
 
 #navigation>a:hover {
     color: var(--clr-highlight);
 }
 
-#navigation>button {
+#navigation>button,
+#navigation>.nav-support-btn {
     width: 90px;
-    height: 27.5px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: #4b4b4b;
+    height: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
     color: var(--clr-font-light);
-    border-radius: 999px;
+    border-radius: 14px;
     font-weight: 500;
-    backdrop-filter: blur(6px);
-    box-shadow:
-        0 1px 2px rgba(255, 255, 255, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        0 2px 6px rgba(0, 0, 0, 0.25);
+    font-size: .8rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
-#navigation>button:hover {
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow:
-        0 2px 4px rgba(255, 255, 255, 0.25),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2),
-        0 4px 8px rgba(0, 0, 0, 0.3);
+#navigation>button:hover,
+#navigation>.nav-support-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.08) 100%);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: var(--clr-font-light);
 }
 
 #navigation>span {
@@ -385,7 +433,6 @@ button {
 }
 
 /* Introduction */
-
 
 #introduction {
     display: flex;
@@ -418,6 +465,12 @@ button {
     margin-right: 1rem;
     outline: 1px solid var(--clr-base);
     box-shadow: 0 0 15px var(--clr-light-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#introduction img:hover {
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 8px 25px var(--clr-light-shadow);
 }
 
 #introduction>div:first-of-type>div {
@@ -430,9 +483,10 @@ button {
     position: absolute;
     top: .5px;
     right: 1rem;
-    background-color: var(--clr-secondary);
-    border: 1px solid var(--clr-base);
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.9) 0%, rgba(56, 142, 60, 0.8) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 50%;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
 }
 
 #introduction>div:first-of-type img {
@@ -490,11 +544,93 @@ button {
     padding-bottom: 2.25rem;
     border-radius: 60px;
     overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#project-overview>section:hover {
+    transform: translateY(-8px);
 }
 
 #project-overview>section.mshift {
-    background: var(--clr-webbytestudio);
-    background: linear-gradient(165deg, var(--clr-webbytestudio) 0%, var(--clr-webbytestudio-deviation) 100%);
+    background: linear-gradient(165deg, rgba(42, 69, 248, 0.9) 0%, rgba(30, 50, 200, 0.85) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(42, 69, 248, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+#project-overview>section.mshift::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 60px 60px 0 0;
+    pointer-events: none;
+}
+
+/* GhostCrypt */
+
+#project-overview>section.ghostcrypt {
+    background: linear-gradient(165deg, rgba(3, 21, 57, 0.95) 0%, rgba(2, 15, 40, 0.9) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+        0 12px 40px rgba(3, 21, 57, 0.5),
+        0 4px 16px rgba(0, 0, 0, 0.2),
+        inset 0 2px 0 rgba(255, 255, 255, 0.12),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+#project-overview>section.ghostcrypt::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 60px 60px 0 0;
+    pointer-events: none;
+}
+
+#project-overview>section.ghostcrypt::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 58px;
+    pointer-events: none;
+}
+
+#project-overview .ghostcrypt>div>a {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.25s ease;
+}
+
+#project-overview .ghostcrypt>div>a:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
+}
+
+#project-overview .ghostcrypt>div>h1 {
+    font-family: Impact, "Arial Black", Haettenschweiler, sans-serif;
 }
 
 #project-overview>section>div {
@@ -529,16 +665,28 @@ button {
 
 #project-overview>section>div>a {
     width: 150px;
-    height: 37.5px;
+    height: 40px;
     margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    font-weight: 700;
-    border-radius: 25px;
-    background-color: var(--clr-webbytestudio-deviation);
+    font-weight: 600;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.08) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: var(--clr-base);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.25s ease;
+}
+
+#project-overview>section>div>a:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.12) 100%);
+    border-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
 }
 
 #project-overview>section>article {
@@ -555,6 +703,11 @@ button {
     width: auto;
     height: 85%;
     transform: translateY(.85rem);
+    transition: transform 0.4s ease;
+}
+
+#project-overview>section:hover>article>img {
+    transform: translateY(.85rem) scale(1.03);
 }
 
 #project-overview .dunkle-geschichten>article {
@@ -568,6 +721,25 @@ button {
 
 #project-overview .dunkle-geschichten {
     padding: 0;
+    border: 1px solid rgba(49, 186, 205, 0.4);
+    box-shadow: 
+        0 8px 32px rgba(49, 186, 205, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+#project-overview .dunkle-geschichten::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 60px 60px 0 0;
+    pointer-events: none;
+    z-index: 1;
 }
 
 #project-overview .dunkle-geschichten>article>img {
@@ -590,8 +762,20 @@ button {
 }
 
 #project-overview .dunkle-geschichten>div>a {
-    background-color: var(--clr-dunkle-geschichten);
-    color: var(--clr-surface-dark);
+    background: linear-gradient(135deg, rgba(49, 186, 205, 0.75) 0%, rgba(35, 160, 180, 0.6) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #1a1a1a;
+    box-shadow: 0 2px 12px rgba(49, 186, 205, 0.25);
+    transition: all 0.25s ease;
+}
+
+#project-overview .dunkle-geschichten>div>a:hover {
+    background: linear-gradient(135deg, rgba(49, 186, 205, 0.9) 0%, rgba(35, 160, 180, 0.75) 100%);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 20px rgba(49, 186, 205, 0.35);
+    transform: translateY(-1px);
 }
 
 @media (max-width: 1024px) {
@@ -755,10 +939,12 @@ button {
     min-width: 250px;
     height: 175px;
     position: relative;
-    background-color: var(--clr-highlight);
-    border-radius: 25px;
-    border: none;
-    padding: 1rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 1.25rem;
     margin: 0;
     font: inherit;
     color: inherit;
@@ -768,11 +954,25 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.25s ease;
+}
+
+#certificates>.container .row .col-3:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-6px) scale(1.02);
 }
 
 #certificates>.container .row .col-3 img {
     width: 40px;
     height: auto;
+    transition: transform 0.3s ease;
+}
+
+#certificates>.container .row .col-3:hover img {
+    transform: scale(1.1) rotate(-5deg);
 }
 
 #certificates>.container .row .col-3 h1 {
@@ -799,7 +999,9 @@ button {
     flex-direction: column;
     top: 0;
     left: 0;
-    background-color: var(--clr-surface-dark-transparent);
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     z-index: 999;
 }
 
@@ -813,15 +1015,26 @@ button {
 }
 
 #large-image-preview>button {
-    height: 30px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-top: 1rem;
-    background-color: var(--clr-surface-dark);
-    color: var(--clr-base);
-    border-radius: 10px;
-    border: none;
+    height: 40px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-top: 1.5rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--clr-font-strong);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.25s ease;
+}
+
+#large-image-preview>button:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.08) 100%);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
 }
 
 @keyframes fade_in {
@@ -878,18 +1091,56 @@ button {
     padding-left: 4rem;
     padding-right: 4rem;
     padding-bottom: 3rem;
-    background-color: var(--clr-buymeacoffee);
+    background: linear-gradient(165deg, rgba(255, 214, 10, 0.75) 0%, rgba(255, 180, 0, 0.65) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        0 12px 40px rgba(255, 200, 0, 0.35),
+        0 4px 16px rgba(0, 0, 0, 0.1),
+        inset 0 2px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.1);
     border-radius: 75px;
     color: var(--clr-font-strong);
+    position: relative;
+    overflow: hidden;
+}
+
+#support::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 75px 75px 0 0;
+    pointer-events: none;
+}
+
+#support::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 73px;
+    pointer-events: none;
 }
 
 #support>h1 {
     font-family: monospace;
+    position: relative;
+    z-index: 1;
 }
 
 #support>p {
     font-size: 1.2rem;
     font-weight: 700;
+    position: relative;
+    z-index: 1;
     margin-top: 2.5rem;
     margin-bottom: 2rem;
 }
@@ -908,7 +1159,10 @@ button {
     margin-top: 5rem;
     display: flex;
     align-items: center;
-    background-color: var(--clr-surface-dark);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 #footer>span {
@@ -924,43 +1178,50 @@ button {
     color: var(--clr-base)
 }
 
-/* Dark Mode SVG Filter - nur für MPGG Logo */
+/* Dark Mode Overrides */
 @media (prefers-color-scheme: dark) {
+
     img[src*="mpgg.svg"] {
         filter: brightness(0) invert(1);
     }
-    
-    /* Memory Shift Button - bessere Lesbarkeit im Dark Mode */
-    /* Memory Shift Button - dunklerer Ton als WebByteStudio */
+
     #project-overview>section.mshift>div>a {
-        background-color: #1a2f8f !important;
+        background: linear-gradient(135deg, rgba(26, 47, 143, 0.85) 0%, rgba(20, 40, 120, 0.75) 100%) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
         color: #ffffff !important;
     }
-    
-    /* Support Bereich - schwarzer Text für bessere Lesbarkeit */
-    #support>h1 {
-        color: #000000 !important;
+
+    #support {
+        background: linear-gradient(135deg, rgba(255, 214, 10, 0.9) 0%, rgba(255, 200, 0, 0.8) 100%) !important;
+        border: 1px solid rgba(255, 255, 255, 0.25) !important;
     }
-    
+
+    #support>h1,
     #support>p {
         color: #000000 !important;
     }
-    
-    /* Footer - heller Text */
-    #footer>span {
-        color: #ffffff !important;
+
+    .highlight {
+        background: linear-gradient(135deg, rgba(5, 130, 255, 0.22) 0%, rgba(5, 130, 255, 0.12) 100%) !important;
+        border: 1px solid rgba(5, 130, 255, 0.3) !important;
     }
-    
+
+    #footer {
+        background: linear-gradient(135deg, rgba(30, 35, 45, 0.75) 0%, rgba(20, 25, 35, 0.65) 100%) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+
+    #footer>span,
     #footer>a {
         color: #ffffff !important;
     }
-    
-    /* Close Button - dunkler mit weißer Schrift */
+
     #large-image-preview>button {
-        background-color: #1a1a1a !important;
+        background: linear-gradient(135deg, rgba(30, 30, 30, 0.85) 0%, rgba(20, 20, 20, 0.75) 100%) !important;
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
         color: #ffffff !important;
     }
-}
-    
 
 }
