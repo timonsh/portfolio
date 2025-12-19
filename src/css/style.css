@@ -4,142 +4,116 @@
     width: 100%;
     height: 100%;
     font-size: 16px;
+    color-scheme: dark;
 
-    --clr-primary: #0582FF;
-    --clr-secondary: #1bc939;
-    --clr-tertiary: #FA821D;
-    --clr-background: #f7f7f7;
-    --clr-background-full-transparent: #f7f7f700;
-    --clr-font: #858585;
-    --clr-surface-light: #838584;
-    --clr-surface-medium: #595959;
-    --clr-surface-dark: #363636;
-    --clr-surface-dark-transparent: rgba(54, 54, 54, 0.8);
-    --clr-highlight: #e8e8e8;
-    --clr-bold: #3c3c3c;
-    --clr-font-strong: #3b3b3b;
-    --clr-base: #fff;
-    --clr-base-transparent: rgba(255, 255, 255, 0.3);
-    --clr-light-shadow: #bcbcbc;
+    --clr-primary: #2a45f8;
+    --clr-secondary: #3fb950;
+    --clr-tertiary: #f78166;
+    --clr-background: #0d1117;
+    --clr-background-full-transparent: #0d111700;
+    --clr-font: #e6edf3;
+    --clr-surface-light: #21262d;
+    --clr-surface-medium: #30363d;
+    --clr-surface-dark: #30363d;
+    --clr-surface-dark-transparent: rgba(48, 54, 61, 0.85);
+    --clr-highlight: #30363d;
+    --clr-bold: #ffffff;
+    --clr-font-strong: #ffffff;
+    --clr-base: #21262d;
+    --clr-base-transparent: rgba(33, 38, 45, 0.6);
+    --clr-light-shadow: rgba(0, 0, 0, 0.3);
     --clr-webbytestudio: #2a45f8;
-    --clr-webbytestudio-deviation: rgba(16, 37, 176, 1);
+    --clr-webbytestudio-deviation: rgba(42, 69, 248, 0.8);
     --clr-dunkle-geschichten: #31bacd;
-    --clr-buymeacoffee: #ffde13;
+    --clr-buymeacoffee: #ffd60a;
 }
 
-@media (prefers-color-scheme: dark) {
+/* Navigation */
+#navigation {
+    background: linear-gradient(135deg, rgba(30, 35, 45, 0.75) 0%, rgba(20, 25, 35, 0.65) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25) !important;
+}
 
-    :root {
-        --clr-background: #0d1117;
-        --clr-background-full-transparent: #0d111700;
-        --clr-font: #e6edf3;
-        --clr-surface-light: #21262d;
-        --clr-surface-medium: #30363d;
-        --clr-surface-dark: #30363d;
-        --clr-surface-dark-transparent: rgba(48, 54, 61, 0.85);
-        --clr-highlight: #30363d;
-        --clr-bold: #ffffff;
-        --clr-font-strong: #ffffff;
-        --clr-base: #21262d;
-        --clr-base-transparent: rgba(33, 38, 45, 0.6);
-        --clr-light-shadow: rgba(0, 0, 0, 0.3);
-        --clr-primary: #2a45f8;
-        --clr-secondary: #3fb950;
-        --clr-tertiary: #f78166;
-        --clr-webbytestudio: #2a45f8;
-        --clr-webbytestudio-deviation: rgba(42, 69, 248, 0.8);
-        --clr-dunkle-geschichten: #31bacd;
-        --clr-buymeacoffee: #ffd60a;
-    }
+#navigation>button,
+#navigation>.nav-support-btn {
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.04) 100%) !important;
+    color: var(--clr-font) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
 
-    /* Navigation */
-    #navigation {
-        background: linear-gradient(135deg, rgba(30, 35, 45, 0.75) 0%, rgba(20, 25, 35, 0.65) 100%) !important;
-        border: 1px solid rgba(255, 255, 255, 0.08) !important;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25) !important;
-    }
+#navigation>button:hover,
+#navigation>.nav-support-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.08) 100%) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
 
-    #navigation>button,
-    #navigation>.nav-support-btn {
-        border: 1px solid rgba(255, 255, 255, 0.12) !important;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.04) 100%) !important;
-        color: var(--clr-font) !important;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
-    }
+#navigation, #navigation * {
+    color: var(--clr-font-strong) !important;
+}
 
-    #navigation>button:hover,
-    #navigation>.nav-support-btn:hover {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.08) 100%) !important;
-        border-color: rgba(255, 255, 255, 0.2) !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-    }
+/* Profile Image Glow */
+#introduction>div:first-of-type img {
+    box-shadow: 0 0 32px 0 #1a237e, 0 0 8px 2px #00bcd4 !important;
+}
 
-    #navigation, #navigation * {
-        color: var(--clr-font-strong) !important;
-    }
+/* Project Buttons */
+#project-overview .dunkle-geschichten>div>a {
+    background: linear-gradient(135deg, rgba(49, 186, 205, 0.75) 0%, rgba(35, 160, 180, 0.6) 100%) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 12px rgba(49, 186, 205, 0.25) !important;
+}
 
-    /* Profile Image Glow */
-    #introduction>div:first-of-type img {
-        box-shadow: 0 0 32px 0 #1a237e, 0 0 8px 2px #00bcd4 !important;
-    }
+#project-overview .dunkle-geschichten>div>a:hover {
+    background: linear-gradient(135deg, rgba(49, 186, 205, 0.9) 0%, rgba(35, 160, 180, 0.75) 100%) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 4px 20px rgba(49, 186, 205, 0.35) !important;
+}
 
-    /* Project Buttons */
-    #project-overview .dunkle-geschichten>div>a {
-        background: linear-gradient(135deg, rgba(49, 186, 205, 0.75) 0%, rgba(35, 160, 180, 0.6) 100%) !important;
-        backdrop-filter: blur(10px) !important;
-        -webkit-backdrop-filter: blur(10px) !important;
-        border: 1px solid rgba(255, 255, 255, 0.35) !important;
-        color: #ffffff !important;
-        font-weight: 600 !important;
-        box-shadow: 0 2px 12px rgba(49, 186, 205, 0.25) !important;
-    }
+/* Buttons */
+.primary-btn {
+    background: linear-gradient(135deg, rgba(5, 130, 255, 0.25) 0%, rgba(5, 130, 255, 0.12) 100%) !important;
+    color: var(--clr-font-strong) !important;
+    font-weight: 500 !important;
+    border: 1px solid rgba(5, 130, 255, 0.4) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
 
-    #project-overview .dunkle-geschichten>div>a:hover {
-        background: linear-gradient(135deg, rgba(49, 186, 205, 0.9) 0%, rgba(35, 160, 180, 0.75) 100%) !important;
-        border-color: rgba(255, 255, 255, 0.5) !important;
-        box-shadow: 0 4px 20px rgba(49, 186, 205, 0.35) !important;
-    }
+.primary-btn:hover {
+    background: linear-gradient(135deg, rgba(5, 130, 255, 0.35) 0%, rgba(5, 130, 255, 0.18) 100%) !important;
+    color: var(--clr-font-strong) !important;
+    border-color: rgba(5, 130, 255, 0.55) !important;
+}
 
-    /* Buttons */
-    .primary-btn {
-        background: linear-gradient(135deg, rgba(5, 130, 255, 0.25) 0%, rgba(5, 130, 255, 0.12) 100%) !important;
-        color: var(--clr-font-strong) !important;
-        font-weight: 500 !important;
-        border: 1px solid rgba(5, 130, 255, 0.4) !important;
-        backdrop-filter: blur(10px) !important;
-        -webkit-backdrop-filter: blur(10px) !important;
-    }
+.secondary-btn {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%) !important;
+    color: var(--clr-font-strong) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    font-weight: 500 !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
 
-    .primary-btn:hover {
-        background: linear-gradient(135deg, rgba(5, 130, 255, 0.35) 0%, rgba(5, 130, 255, 0.18) 100%) !important;
-        color: var(--clr-font-strong) !important;
-        border-color: rgba(5, 130, 255, 0.55) !important;
-    }
+.secondary-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.06) 100%) !important;
+    color: var(--clr-font-strong) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
 
-    .secondary-btn {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%) !important;
-        color: var(--clr-font-strong) !important;
-        border: 1px solid rgba(255, 255, 255, 0.18) !important;
-        font-weight: 500 !important;
-        backdrop-filter: blur(10px) !important;
-        -webkit-backdrop-filter: blur(10px) !important;
-    }
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--clr-font-strong) !important;
+}
 
-    .secondary-btn:hover {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.06) 100%) !important;
-        color: var(--clr-font-strong) !important;
-        border-color: rgba(255, 255, 255, 0.3) !important;
-    }
-
-    /* Typography */
-    h1, h2, h3, h4, h5, h6 {
-        color: var(--clr-font-strong) !important;
-    }
-
-    p {
-        color: var(--clr-font) !important;
-    }
-
+p {
+    color: var(--clr-font) !important;
 }
 
 body {
