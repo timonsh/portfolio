@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- Hauptseite -->
     <url>
-        <loc>https://timonsh.dev/</loc>
-        <lastmod>2025-12-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <loc>https://timonsh.dev</loc>
+        <lastmod>2025-12-28</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     <!-- Impressum -->
     <url>
-        <loc>https://timonsh.dev/impressum.html</loc>
-        <lastmod>2025-12-20</lastmod>
+        <loc>https://timonsh.dev/impressum</loc>
+        <lastmod>2025-12-28</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
+    </url>
+    <!-- 404 -->
+    <url>
+        <loc>https://timonsh.dev/404</loc>
+        <lastmod>2025-12-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
     </url>
 </urlset>
