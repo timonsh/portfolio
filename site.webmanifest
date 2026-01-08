@@ -2,24 +2,24 @@
   "name": "Timon Schroth - timonsh",
   "short_name": "timonsh",
   "description": "Portfolio von Timon Schroth [timonsh] – Web & App Developer",
-  "start_url": "https://timonsh.dev/",
+  "start_url": "/",
   "scope": "/",
   "id": "/",
   "icons": [
     {
-      "src": "https://timonsh.dev/src/assets/favicons/favicon-96x96.png",
+      "src": "/favicon-96x96.png",
       "sizes": "96x96",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://timonsh.dev/src/assets/favicons/web-app-manifest-192x192.png",
+      "src": "/src/assets/favicons/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "https://timonsh.dev/src/assets/favicons/web-app-manifest-512x512.png",
+      "src": "/src/assets/favicons/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
