@@ -3503,3 +3503,46 @@ p:has(.highlight) {
     .support-particle { display: none !important; }
     .support-clicked { animation: none !important; }
 }
+
+/* === Hero terminal: bulletproof mobile fit ===
+   Earlier the cmd line was clipped right and the output got cut horizontally.
+   Use a viewport-clamped font + allow output to wrap freely. */
+
+.hero-terminal-body {
+    /* Auto-shrinks: never bigger than 1.02rem, never smaller than 0.62rem,
+       scales with viewport between */
+    font-size: clamp(0.62rem, 2.4vw, 1.02rem) !important;
+}
+
+.hero-terminal .terminal-output {
+    white-space: normal !important;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+/* Mobile-specific tightening so even the longest command fits */
+@media (max-width: 700px) {
+    .hero-terminal {
+        max-width: 96% !important;
+    }
+    .hero-terminal-body {
+        padding: 0.9rem 0.9rem !important;
+        line-height: 1.5 !important;
+        min-height: auto !important;
+    }
+    .hero-terminal .terminal-output {
+        padding-left: 1.4rem !important;
+    }
+    .terminal-prompt-line,
+    .terminal-cmd-line {
+        gap: 0.32rem !important;
+    }
+    .terminal-icon { width: 13px !important; height: 13px !important; }
+    .terminal-cursor { width: 7px !important; }
+}
+
+@media (max-width: 480px) {
+    .hero-terminal-body { padding: 0.75rem 0.75rem !important; }
+    .hero-terminal .terminal-output { padding-left: 1.1rem !important; }
+    .terminal-prompt-line, .terminal-cmd-line { gap: 0.25rem !important; }
+}
