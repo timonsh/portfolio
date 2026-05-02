@@ -1,0 +1,15 @@
+# Claude Code artifacts (never commit)
+CLAUDE.md
+CLAUDE/
+.claude/
+.claude.json
+*.claude
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp

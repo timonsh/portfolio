@@ -1,18 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+    <meta name="author" content="Timon Schroth">
+    <meta name="description" content="404 – Seite nicht gefunden auf timonsh.dev">
+    <meta name="robots" content="noindex, follow">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#01133e">
+    <meta name="msapplication-TileColor" content="#01133e">
+
+    <title>404 – Seite nicht gefunden | Timon Schroth</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/svg+xml" href="/src/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/assets/favicons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="timonsh">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+
+    <!-- Styles & Scripts -->
+    <link rel="stylesheet" href="./src/css/@font-face.css" type="text/css">
+    <link rel="stylesheet" href="./src/css/style.css" type="text/css">
+    <script src="./src/js/main.js" type="text/javascript" defer></script>
+    <script src="./src/js/webbytestudiotag.js" type="text/javascript" defer></script>
+
 </head>
 
-<body>
+<body class="error-page">
+
+    <div id="bg-grid" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <section id="nav-area">
+
+        <nav id="navigation">
+
+            <a href="/">Home</a>
+            <span>·</span>
+            <a href="/#project-overview">Projekte</a>
+            <span>·</span>
+            <a href="/#about-me">Über mich</a>
+            <div></div>
+
+            <a href="https://github.com/timonsh" target="_blank" rel="noopener" class="nav-support-btn nav-github-btn"
+                aria-label="GitHub">
+                <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0016 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+                <span>GitHub</span>
+            </a>
+
+            <a href="https://instagram.com/webbytestudio" target="_blank" rel="noopener"
+                class="nav-support-btn nav-instagram-btn" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+                    <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.897 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.897-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
+                </svg>
+                <span>Instagram</span>
+            </a>
+
+        </nav>
+
+    </section>
+
+    <main class="error-main">
+
+        <section class="error-hero">
+
+            <div class="error-code" aria-hidden="true">
+                <span>4</span><span class="error-code-zero">0</span><span>4</span>
+            </div>
+
+            <h1 class="error-title">Seite nicht gefunden</h1>
+            <p class="error-sub">
+                Die Seite, die du suchst, existiert nicht oder wurde verschoben.
+            </p>
+
+            <div class="error-terminal" aria-hidden="true">
+                <span class="terminal-prompt">[timonsh ~] $</span>
+                <span class="terminal-cmd">cat <span class="terminal-path"></span></span><br>
+                <span class="terminal-error">cat: No such file or directory</span>
+            </div>
+
+            <div class="error-actions">
+                <a href="/" class="primary-btn">← Zurück zur Startseite</a>
+                <a href="/#project-overview" class="secondary-btn">Projekte ansehen</a>
+            </div>
+
+        </section>
+
+        <section class="error-suggestions">
+            <h2><span class="hash">#</span>Vielleicht suchst du</h2>
+            <ul class="error-links">
+                <li><a href="/#project-overview"><span class="link-icon">→</span> Projekte</a></li>
+                <li><a href="/#certificates"><span class="link-icon">→</span> Zertifikate</a></li>
+                <li><a href="/#about-me"><span class="link-icon">→</span> Über mich</a></li>
+                <li><a href="/#support"><span class="link-icon">→</span> Support</a></li>
+                <li><a href="/impressum.html"><span class="link-icon">→</span> Impressum</a></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer id="footer">
+        <span>[timonsh ~] $ Timon Schroth</span>
+        <a href="/">Zur Startseite</a>
+    </footer>
 
     <script>
-
-        window.location.href = "index.html";
-
+        // Show the path the user tried to reach in the terminal block
+        document.querySelector('.terminal-path').textContent = location.pathname + location.search;
     </script>
 
 </body>

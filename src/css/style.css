@@ -506,7 +506,7 @@ button {
     transition: .5s;
 }
 
-#project-overview>section {
+#project-overview section {
     width: 85%;
     height: auto;
     min-height: 700px;
@@ -521,11 +521,11 @@ button {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-#project-overview>section:hover {
+#project-overview section:hover {
     transform: translateY(-8px);
 }
 
-#project-overview>section.mshift {
+#project-overview section.mshift {
     background: linear-gradient(165deg, rgba(42, 69, 248, 0.9) 0%, rgba(30, 50, 200, 0.85) 100%);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 
@@ -535,7 +535,7 @@ button {
     position: relative;
 }
 
-#project-overview>section.mshift::before {
+#project-overview section.mshift::before {
     content: "";
     position: absolute;
     top: 0;
@@ -549,7 +549,7 @@ button {
 
 /* GhostCrypt */
 
-#project-overview>section.ghostcrypt {
+#project-overview section.ghostcrypt {
     background: linear-gradient(165deg, rgba(3, 21, 57, 0.95) 0%, rgba(2, 15, 40, 0.9) 100%);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -562,7 +562,7 @@ button {
     position: relative;
 }
 
-#project-overview>section.ghostcrypt::before {
+#project-overview section.ghostcrypt::before {
     content: "";
     position: absolute;
     top: 0;
@@ -574,7 +574,7 @@ button {
     pointer-events: none;
 }
 
-#project-overview>section.ghostcrypt::after {
+#project-overview section.ghostcrypt::after {
     content: "";
     position: absolute;
     top: 2px;
@@ -607,18 +607,18 @@ button {
     font-family: Impact, "Arial Black", Haettenschweiler, sans-serif;
 }
 
-#project-overview>section>div {
+#project-overview section>div {
     padding-left: 3rem;
     padding-right: 3rem;
     padding-top: 3rem;
 }
 
-#project-overview>section>div>img {
+#project-overview section>div>img {
     width: 75px;
     height: 75px;
 }
 
-#project-overview>section>div>h1 {
+#project-overview section>div>h1 {
     margin-top: 1.35rem;
     margin-bottom: .5rem;
     padding-left: .35rem;
@@ -627,7 +627,7 @@ button {
     color: var(--clr-base);
 }
 
-#project-overview>section>div>p {
+#project-overview section>div>p {
     width: 45%;
     font-size: 1.1rem;
     padding-left: .35rem;
@@ -637,7 +637,7 @@ button {
     font-weight: 700;
 }
 
-#project-overview>section>div>a {
+#project-overview section>div>a {
     width: 150px;
     height: 40px;
     margin-top: 2rem;
@@ -656,14 +656,14 @@ button {
     transition: all 0.25s ease;
 }
 
-#project-overview>section>div>a:hover {
+#project-overview section>div>a:hover {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.12) 100%);
     border-color: rgba(255, 255, 255, 0.45);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     transform: translateY(-1px);
 }
 
-#project-overview>section>article {
+#project-overview section>article {
     width: auto;
     height: 100%;
     display: flex;
@@ -673,14 +673,14 @@ button {
     top: 0;
 }
 
-#project-overview>section>article>img {
+#project-overview section>article>img {
     width: auto;
     height: 85%;
     transform: translateY(.85rem);
     transition: transform 0.4s ease;
 }
 
-#project-overview>section:hover>article>img {
+#project-overview section:hover>article>img {
     transform: translateY(.85rem) scale(1.03);
 }
 
@@ -754,7 +754,7 @@ button {
 
 @media (max-width: 1024px) {
 
-    #project-overview>section {
+    #project-overview section {
         width: 95%;
     }
 
@@ -762,16 +762,16 @@ button {
 
 @media (max-width: 915px) {
 
-    #project-overview>section>div {
+    #project-overview section>div {
         width: 100%;
 
     }
 
-    #project-overview>section>div>p {
+    #project-overview section>div>p {
         width: 100%;
     }
 
-    #project-overview>section>article:not(.responsive-exclusion) {
+    #project-overview section>article:not(.responsive-exclusion) {
         width: 100%;
         display: flex;
         justify-content: center;
@@ -782,7 +782,7 @@ button {
         padding-top: 2rem;
     }
 
-    #project-overview>section>article>img:not(.responsive-exclusion) {
+    #project-overview section>article>img:not(.responsive-exclusion) {
         width: auto;
         height: 600px;
     }
@@ -818,17 +818,17 @@ button {
         font-size: 1rem;
     }
 
-    #project-overview>section>div>h1 {
+    #project-overview section>div>h1 {
         font-size: 2.5rem;
         margin-bottom: 0;
     }
 
-    #project-overview>section>div>img {
+    #project-overview section>div>img {
         width: 50px;
         height: 50px;
     }
 
-    #project-overview>section>div>p {
+    #project-overview section>div>p {
         font-size: 1rem;
     }
 
@@ -841,19 +841,19 @@ button {
 
 @media (max-width: 550px) {
 
-    #project-overview>section>div>h1 {
+    #project-overview section>div>h1 {
         font-size: 2rem;
     }
 
-    #project-overview>section>div>p {
+    #project-overview section>div>p {
         font-size: .9rem;
     }
 
-    #project-overview>section>article>img:not(.responsive-exclusion) {
+    #project-overview section>article>img:not(.responsive-exclusion) {
         height: 500px;
     }
 
-    #project-overview>section {
+    #project-overview section {
         min-height: 525px;
     }
 
@@ -1159,7 +1159,7 @@ button {
         filter: brightness(0) invert(1);
     }
 
-    #project-overview>section.mshift>div>a {
+    #project-overview section.mshift>div>a {
         background: linear-gradient(135deg, rgba(26, 47, 143, 0.85) 0%, rgba(20, 40, 120, 0.75) 100%) !important;
         backdrop-filter: blur(10px) !important;
         -webkit-backdrop-filter: blur(10px) !important;
@@ -1198,4 +1198,2308 @@ button {
         color: #ffffff !important;
     }
 
+}
+
+/* ============================================================ */
+/* ============== v2.1.1 SUBTLE POLISH LAYER ================== */
+/* ============================================================ */
+
+/* Kill the dark gradient strip below nav (was bleeding visibly). */
+#nav-area::after { display: none !important; }
+
+/* --- Footer fix: keep impressum on the right, away from left text --- */
+#footer {
+    position: relative;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+#footer > span,
+#footer > a {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+}
+
+#footer > a {
+    text-decoration: none;
+    opacity: 0.85;
+    transition: opacity 0.25s ease;
+}
+
+#footer > a:hover { opacity: 1; }
+
+/* --- Section headings: # caret, dezent --- */
+main > section > h1::before,
+#support > h1::before {
+    content: "#";
+    color: var(--clr-primary);
+    margin-right: 0.55rem;
+    font-weight: 600;
+    opacity: 0.55;
+}
+
+/* --- Background grid: always faintly visible, brighter under cursor --- */
+#bg-grid {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 36px 36px;
+    -webkit-mask-image: radial-gradient(circle 280px at var(--mx, 50%) var(--my, 50%),
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.32) 80%);
+            mask-image: radial-gradient(circle 280px at var(--mx, 50%) var(--my, 50%),
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.32) 80%);
+}
+
+/* Touch / no-hover / reduced motion → uniform faint grid (no cursor highlight) */
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+    #bg-grid {
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+        opacity: 0.55;
+    }
+}
+
+/* --- Pulse on profile status dot --- */
+#introduction > div:first-of-type > div > div {
+    animation: pulse-dot 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.35),
+                    0 0 6px rgba(76, 175, 80, 0.45);
+    }
+    50% {
+        box-shadow: 0 0 0 5px rgba(76, 175, 80, 0),
+                    0 0 10px rgba(76, 175, 80, 0.6);
+    }
+}
+
+/* --- Modern solid buttons: same shape language as project CTAs --- */
+.primary-btn {
+    height: 44px !important;
+    min-width: auto !important;
+    padding: 0 1.5rem !important;
+    background: var(--clr-primary) !important;
+    color: #ffffff !important;
+    font-size: 0.92rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.005em !important;
+    border: none !important;
+    border-radius: 20px !important;
+    box-shadow: 0 2px 14px rgba(42, 69, 248, 0.3) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.primary-btn:hover {
+    background: #3a55ff !important;
+    box-shadow: 0 4px 22px rgba(42, 69, 248, 0.45) !important;
+    border: none !important;
+    transform: translateY(-2px) !important;
+    color: #ffffff !important;
+}
+
+.primary-btn:active {
+    transform: translateY(0) !important;
+    transition-duration: 0.12s !important;
+}
+
+.secondary-btn {
+    height: 44px !important;
+    min-width: auto !important;
+    padding: 0 1.5rem !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: var(--clr-font-strong) !important;
+    font-size: 0.92rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.005em !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    border-radius: 20px !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.28) !important;
+    transform: translateY(-2px) !important;
+    color: var(--clr-font-strong) !important;
+}
+
+.secondary-btn:active {
+    transform: translateY(0) !important;
+    transition-duration: 0.12s !important;
+}
+
+/* Nav support button: same shape language, smaller */
+#navigation > .nav-support-btn {
+    width: auto !important;
+    height: 32px !important;
+    padding: 0 1rem !important;
+    background: var(--clr-primary) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 0.78rem !important;
+    border: none !important;
+    border-radius: 16px !important;
+    box-shadow: 0 2px 10px rgba(42, 69, 248, 0.28) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#navigation > .nav-support-btn:hover {
+    background: #3a55ff !important;
+    box-shadow: 0 4px 18px rgba(42, 69, 248, 0.42) !important;
+    border: none !important;
+    color: #ffffff !important;
+    transform: translateY(-1.5px) !important;
+}
+
+/* --- About me: ruhige bordered glass card --- */
+#about-me > .important-text {
+    width: 85%;
+    padding: 1.75rem 2.25rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    text-align: left !important;
+}
+
+/* --- Image preview: smooth pop-in (ersetzt das harte fade) --- */
+#large-image-preview > img {
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
+    animation: preview-pop 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes preview-pop {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* --- Scroll-reveal: nur ein dezenter fade-up, einheitlich --- */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-up.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* --- Selection und scrollbar: subtil gebrandet --- */
+::selection {
+    background: rgba(42, 69, 248, 0.35);
+    color: #ffffff;
+}
+
+::-webkit-scrollbar       { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    border: 2px solid var(--clr-background);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+/* --- Reduced motion respektieren --- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* --- Modern text highlight: subtle filled chip, identical hover --- */
+.highlight,
+.highlight:hover {
+    display: inline !important;
+    height: auto !important;
+    padding: 0.18em 0.42em !important;
+    margin: 0 !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    background: rgba(255, 255, 255, 0.085) !important;
+    border: none !important;
+    border-radius: 6px !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    transform: none !important;
+    transition: none !important;
+}
+
+/* === Smoother global motion === */
+
+/* Smoother scroll reveals (override base 0.6s ease) */
+.animate-on-scroll.visible {
+    animation: fadeInUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+.reveal-up {
+    transform: translateY(20px) !important;
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Project cards: smoother lift */
+#project-overview section {
+    transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.55s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#project-overview section > article > img {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Certificates: smoother card lift */
+#certificates > .container .row .col-3 {
+    transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Profile image: smoother hover */
+#introduction img {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Nav links: softer hover */
+#navigation > a {
+    transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#navigation > a::after {
+    transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* === FWG-BsP project section (purple/violet, matching logo) === */
+#project-overview section.fwgbsp {
+    background: linear-gradient(165deg, rgba(79, 70, 142, 0.92) 0%, rgba(58, 52, 112, 0.88) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow:
+        0 8px 32px rgba(79, 70, 142, 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+#project-overview section.fwgbsp::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 60px 60px 0 0;
+    pointer-events: none;
+}
+
+#project-overview .fwgbsp > div > h1 {
+    font-family: "Lora", "Gilroy", Helvetica, Arial, sans-serif;
+}
+
+#project-overview .fwgbsp > div > a {
+    background: #172441 !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.25),
+        0 8px 22px rgba(23, 36, 65, 0.45) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+#project-overview .fwgbsp > div > a:hover {
+    background: #22315a !important;
+    border: none !important;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.28),
+        0 12px 30px rgba(23, 36, 65, 0.55) !important;
+    transform: translateY(-2px) !important;
+    color: #ffffff !important;
+}
+
+/* FWG: live iframe embed with image fallback */
+#project-overview section.fwgbsp > article {
+    width: 48%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    right: 2.5rem;
+    top: 0;
+    padding: 2rem 0;
+}
+
+.embed-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1400 / 768;
+    max-height: 78%;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #1a1a26;
+    box-shadow:
+        0 16px 48px rgba(0, 0, 0, 0.4),
+        0 4px 16px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#project-overview section.fwgbsp:hover .embed-frame {
+    transform: translateY(-3px);
+    box-shadow:
+        0 22px 60px rgba(0, 0, 0, 0.45),
+        0 6px 20px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.embed-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1400px;
+    height: 768px;
+    border: 0;
+    transform: scale(var(--embed-scale, 1));
+    transform-origin: top left;
+    background: #ffffff;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.1s;
+}
+
+.embed-frame.embed-ready iframe {
+    opacity: 1;
+}
+
+.embed-frame .embed-fallback {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.45s ease;
+}
+
+.embed-frame.embed-ready .embed-fallback {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.embed-frame.embed-failed iframe {
+    display: none;
+}
+
+@media (max-width: 915px) {
+    #project-overview section.fwgbsp > article {
+        width: 100%;
+        position: relative;
+        right: unset;
+        top: unset;
+        padding: 2rem 2rem 0;
+        justify-content: center;
+    }
+    .embed-frame {
+        max-width: 92%;
+        max-height: none;
+    }
+}
+
+/* === Project stack: sticky pinning + card switching on scroll === */
+.project-stack-wrapper {
+    position: relative;
+    /* 1.4 viewports per card → relaxed scroll pace, hard to skip a card */
+    height: calc(var(--card-count, 4) * 140vh);
+}
+
+.project-stack-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "stack";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    perspective: 1600px;
+}
+
+.project-stack-sticky > section {
+    grid-area: stack;
+    width: 85% !important;
+    max-width: 1300px !important;
+    height: min(680px, calc(100vh - 6rem)) !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    opacity: 0;
+    transform: scale(0.88) translateY(80px);
+    filter: blur(6px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1.05s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    z-index: 1;
+    will-change: opacity, transform, filter;
+    backface-visibility: hidden;
+}
+
+.project-stack-sticky > section.stack-prev {
+    transform: scale(0.92) translateY(-100px);
+    filter: blur(6px);
+}
+
+.project-stack-sticky > section.stack-active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+    pointer-events: auto;
+    z-index: 10;
+}
+
+/* Cards already have padding-top: 3rem from base CSS, dial it down so content fits */
+.project-stack-sticky > section > div {
+    padding-top: 2rem !important;
+    padding-bottom: 1rem !important;
+}
+
+/* Mobile + reduced motion: kill pinning, fall back to normal vertical stack */
+@media (max-width: 915px), (prefers-reduced-motion: reduce) {
+    .project-stack-wrapper {
+        height: auto !important;
+    }
+    .project-stack-sticky {
+        position: static !important;
+        height: auto !important;
+        display: block !important;
+        overflow: visible !important;
+        padding: 0 !important;
+    }
+    .project-stack-sticky > section {
+        width: 95% !important;
+        max-width: none !important;
+        height: auto !important;
+        min-height: 525px !important;
+        margin: 0 auto 2rem !important;
+        opacity: 1 !important;
+        transform: none !important;
+        pointer-events: auto !important;
+        z-index: auto !important;
+    }
+    .project-stack-sticky > section > div {
+        padding-top: 3rem !important;
+        padding-bottom: 0 !important;
+    }
+}
+
+/* === Per-card branded borders + light glow shadows === */
+
+#project-overview section.mshift {
+    border: 1px solid rgba(140, 165, 255, 0.4) !important;
+    box-shadow:
+        0 12px 40px rgba(42, 69, 248, 0.32),
+        0 0 70px -10px rgba(80, 110, 255, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+#project-overview section.fwgbsp {
+    border: 1px solid rgba(170, 155, 240, 0.38) !important;
+    box-shadow:
+        0 12px 40px rgba(79, 70, 142, 0.4),
+        0 0 70px -10px rgba(135, 115, 215, 0.38),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+#project-overview section.ghostcrypt {
+    border: 1px solid rgba(120, 175, 255, 0.32) !important;
+    box-shadow:
+        0 12px 40px rgba(3, 21, 57, 0.55),
+        0 0 80px -12px rgba(94, 175, 255, 0.32),
+        inset 0 2px 0 rgba(255, 255, 255, 0.14),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.18) !important;
+}
+
+#project-overview section.dunkle-geschichten {
+    border: 1px solid rgba(80, 210, 220, 0.45) !important;
+    box-shadow:
+        0 12px 40px rgba(49, 186, 205, 0.32),
+        0 0 80px -12px rgba(70, 200, 215, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+/* === Navigation: shrink + widen on scroll === */
+
+#nav-area {
+    transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#navigation {
+    transition:
+        width 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+        min-width 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+        height 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+        margin-top 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+        border-radius 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+        background 0.4s ease,
+        backdrop-filter 0.4s ease !important;
+}
+
+#nav-area.nav-scrolled {
+    height: 56px;
+}
+
+#nav-area.nav-scrolled #navigation {
+    width: 82% !important;
+    min-width: 560px !important;
+    max-width: 1200px !important;
+    height: 36px !important;
+    margin-top: 0.7rem !important;
+    border-radius: 18px !important;
+    background: linear-gradient(135deg, rgba(20, 25, 38, 0.9) 0%, rgba(14, 18, 28, 0.82) 100%) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35) !important;
+}
+
+#nav-area.nav-scrolled #navigation > * {
+    margin-left: 0.4rem !important;
+    margin-right: 0.4rem !important;
+    transition: font-size 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                margin 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#nav-area.nav-scrolled #navigation > a {
+    font-size: 0.74rem !important;
+}
+
+#nav-area.nav-scrolled #navigation > .nav-support-btn {
+    height: 24px !important;
+    padding: 0 0.75rem !important;
+    font-size: 0.68rem !important;
+    border-radius: 12px !important;
+}
+
+@media (max-width: 700px) {
+    #nav-area.nav-scrolled #navigation {
+        width: 92% !important;
+        min-width: unset !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #nav-area, #navigation, #navigation > * {
+        transition: none !important;
+    }
+}
+
+/* === Project stack progress indicator (right side, only visible while pinned) === */
+.stack-progress {
+    position: fixed;
+    top: 50%;
+    right: 1.6rem;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 50;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stack-progress.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.stack-progress > button {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+.stack-progress > button::before {
+    content: "";
+    position: absolute;
+    inset: -8px;
+}
+
+.stack-progress > button:hover {
+    background: rgba(255, 255, 255, 0.55);
+    transform: scale(1.25);
+}
+
+.stack-progress > button.active {
+    background: var(--clr-primary);
+    width: 8px;
+    height: 26px;
+    border-radius: 4px;
+    box-shadow: 0 0 12px rgba(42, 69, 248, 0.55);
+}
+
+@media (max-width: 915px), (prefers-reduced-motion: reduce) {
+    .stack-progress { display: none !important; }
+}
+
+/* === JetBrains Mono everywhere === */
+html, body, *, *::before, *::after {
+    font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace !important;
+}
+
+/* === Bounce on click: snap down fast, spring back with overshoot === */
+.primary-btn,
+.secondary-btn,
+#navigation > .nav-support-btn,
+#navigation > .nav-github-btn,
+#project-overview section > div > a,
+#large-image-preview > button,
+#certificates > .container .row .col-3 {
+    transition:
+        background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.primary-btn:active,
+.secondary-btn:active,
+#navigation > .nav-support-btn:active,
+#navigation > .nav-github-btn:active,
+#project-overview section > div > a:active,
+#large-image-preview > button:active,
+#certificates > .container .row .col-3:active,
+.stack-progress > button:active {
+    transform: scale(0.92) !important;
+    transition: transform 0.08s cubic-bezier(0.4, 0, 0.6, 1) !important;
+}
+
+/* Hover-restore for buttons that lift on hover — keep their lift, just bouncy */
+.primary-btn:hover:not(:active),
+.secondary-btn:hover:not(:active),
+#navigation > .nav-support-btn:hover:not(:active),
+#navigation > .nav-github-btn:hover:not(:active),
+#project-overview section > div > a:hover:not(:active) {
+    /* existing hover translateY rules apply; bounce easing is already set above */
+}
+
+/* === GitHub nav button: SVG icon + label inline, like an emoji === */
+#navigation > .nav-github-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.4rem !important;
+}
+
+#navigation > .nav-github-btn svg {
+    flex: 0 0 auto;
+    width: 14px;
+    height: 14px;
+    display: block;
+}
+
+#nav-area.nav-scrolled #navigation > .nav-github-btn svg {
+    width: 12px;
+    height: 12px;
+}
+
+#nav-area.nav-scrolled #navigation > .nav-github-btn {
+    gap: 0.3rem !important;
+}
+
+/* === Slightly smaller base font (mono runs visually wider) === */
+html { font-size: 15px; }
+
+/* === Project card body text keeps Gilroy (sans-serif) — easier to read than mono === */
+#project-overview section > div > p,
+#project-overview section > div > p * {
+    font-family: "Gilroy", Helvetica, Arial, sans-serif !important;
+}
+
+/* === Hero GitHub button: SVG icon + soft outer glow === */
+.hero-github {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    box-shadow:
+        0 2px 14px rgba(42, 69, 248, 0.32),
+        0 0 36px -8px rgba(110, 145, 255, 0.55) !important;
+}
+
+.hero-github:hover {
+    box-shadow:
+        0 4px 22px rgba(42, 69, 248, 0.45),
+        0 0 50px -6px rgba(110, 145, 255, 0.7) !important;
+}
+
+.hero-github svg {
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+/* === Instagram nav button: brand gradient === */
+#navigation > .nav-instagram-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.4rem !important;
+    background: linear-gradient(135deg,
+        #f09433 0%,
+        #e6683c 25%,
+        #dc2743 50%,
+        #cc2366 75%,
+        #bc1888 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.18),
+        0 4px 14px rgba(220, 39, 67, 0.38) !important;
+}
+
+#navigation > .nav-instagram-btn:hover {
+    background: linear-gradient(135deg,
+        #ff9c3a 0%,
+        #f17246 25%,
+        #e83456 50%,
+        #d92e74 75%,
+        #c8208e 100%) !important;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.2),
+        0 8px 22px rgba(220, 39, 67, 0.55) !important;
+    color: #ffffff !important;
+    transform: translateY(-1.5px) !important;
+}
+
+#navigation > .nav-instagram-btn svg {
+    flex: 0 0 auto;
+    width: 14px;
+    height: 14px;
+    display: block;
+}
+
+#nav-area.nav-scrolled #navigation > .nav-instagram-btn svg {
+    width: 12px;
+    height: 12px;
+}
+
+#nav-area.nav-scrolled #navigation > .nav-instagram-btn {
+    gap: 0.3rem !important;
+}
+
+/* === FWG-BsP card: more life — stronger animated border, breathing glow, dot texture === */
+#project-overview section.fwgbsp {
+    border: 2px solid rgba(180, 165, 255, 0.55) !important;
+    background: linear-gradient(165deg,
+        rgba(79, 70, 142, 0.95) 0%,
+        rgba(58, 52, 112, 0.92) 50%,
+        rgba(95, 65, 145, 0.95) 100%) !important;
+    background-size: 200% 200% !important;
+    animation: fwg-bg-shift 14s ease-in-out infinite,
+               fwg-glow-pulse 5s ease-in-out infinite !important;
+}
+
+@keyframes fwg-bg-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50%      { background-position: 100% 50%; }
+}
+
+@keyframes fwg-glow-pulse {
+    0%, 100% {
+        box-shadow:
+            0 12px 40px rgba(79, 70, 142, 0.45),
+            0 0 70px -10px rgba(135, 115, 215, 0.55),
+            inset 0 1px 0 rgba(255, 255, 255, 0.28),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        box-shadow:
+            0 16px 50px rgba(79, 70, 142, 0.6),
+            0 0 100px -8px rgba(160, 130, 240, 0.75),
+            inset 0 1px 0 rgba(255, 255, 255, 0.34),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Subtle dot texture overlay so the surface isn't flat */
+#project-overview section.fwgbsp::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px,
+        rgba(255, 255, 255, 0.10) 1px,
+        transparent 0);
+    background-size: 22px 22px;
+    pointer-events: none;
+    border-radius: inherit;
+    opacity: 0.55;
+    z-index: 0;
+}
+
+/* Reduced motion: no animations */
+@media (prefers-reduced-motion: reduce) {
+    #project-overview section.fwgbsp {
+        animation: none !important;
+    }
+}
+
+/* === Dynamic nav width: auto-fit content (after Instagram button added) === */
+#navigation {
+    width: max-content !important;
+    min-width: 0 !important;
+    max-width: 95vw !important;
+    padding: 0 1.2rem !important;
+}
+
+#nav-area.nav-scrolled #navigation {
+    width: max-content !important;
+    min-width: 0 !important;
+    max-width: 95vw !important;
+    padding: 0 0.85rem !important;
+}
+
+@media (max-width: 530px) {
+    #navigation {
+        width: 92vw !important;
+        max-width: 92vw !important;
+        padding: 0 0.6rem !important;
+    }
+    #nav-area.nav-scrolled #navigation {
+        width: 92vw !important;
+        max-width: 92vw !important;
+    }
+}
+
+/* === Per-card tight inner glow (sharp accent, on top of existing soft halo) === */
+#project-overview section.mshift {
+    box-shadow:
+        0 0 0 1px rgba(140, 165, 255, 0.5),
+        0 0 14px rgba(80, 130, 255, 0.55),
+        0 12px 40px rgba(42, 69, 248, 0.32),
+        0 0 70px -10px rgba(80, 110, 255, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+#project-overview section.ghostcrypt {
+    box-shadow:
+        0 0 0 1px rgba(120, 175, 255, 0.4),
+        0 0 14px rgba(94, 175, 255, 0.5),
+        0 12px 40px rgba(3, 21, 57, 0.55),
+        0 0 80px -12px rgba(94, 175, 255, 0.32),
+        inset 0 2px 0 rgba(255, 255, 255, 0.14),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.18) !important;
+}
+
+#project-overview section.dunkle-geschichten {
+    box-shadow:
+        0 0 0 1px rgba(80, 210, 220, 0.55),
+        0 0 14px rgba(70, 200, 215, 0.55),
+        0 12px 40px rgba(49, 186, 205, 0.32),
+        0 0 80px -12px rgba(70, 200, 215, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+/* === FWG-BsP card: lots more life — colorful accent corners + tight glow === */
+#project-overview section.fwgbsp::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.12) 1px, transparent 0),
+        radial-gradient(circle at 92% 105%, rgba(75, 145, 105, 0.4), transparent 45%),
+        radial-gradient(circle at -5% -5%, rgba(255, 200, 130, 0.18), transparent 40%),
+        radial-gradient(circle at 105% 5%, rgba(255, 180, 220, 0.14), transparent 35%);
+    background-size: 22px 22px, 100% 100%, 100% 100%, 100% 100%;
+    pointer-events: none;
+    border-radius: inherit;
+    opacity: 0.85;
+    z-index: 0;
+}
+
+/* FWG keyframes need tight + atmospheric glow, plus a sharp 1px ring */
+@keyframes fwg-glow-pulse {
+    0%, 100% {
+        box-shadow:
+            0 0 0 1px rgba(180, 165, 255, 0.55),
+            0 0 16px rgba(155, 130, 235, 0.6),
+            0 12px 40px rgba(79, 70, 142, 0.45),
+            0 0 70px -10px rgba(135, 115, 215, 0.55),
+            inset 0 1px 0 rgba(255, 255, 255, 0.28),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        box-shadow:
+            0 0 0 1px rgba(200, 185, 255, 0.7),
+            0 0 22px rgba(180, 150, 250, 0.75),
+            0 16px 50px rgba(79, 70, 142, 0.6),
+            0 0 100px -8px rgba(165, 135, 240, 0.75),
+            inset 0 1px 0 rgba(255, 255, 255, 0.34),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* === Per-card heading fonts (override JetBrains Mono universal) === */
+#project-overview section.mshift > div > h1,
+#project-overview section.fwgbsp > div > h1 {
+    font-family: "Lora", Georgia, serif !important;
+}
+
+#project-overview section.ghostcrypt > div > h1 {
+    font-family: Impact, "Arial Black", Haettenschweiler, sans-serif !important;
+}
+
+#project-overview section.dunkle-geschichten > div > h1 {
+    font-family: "Cormorant Garamond", "Lora", Georgia, serif !important;
+}
+
+/* === FWG headline: smaller than card default but readable === */
+#project-overview section.fwgbsp > div > h1 {
+    font-size: 2.3rem !important;
+    line-height: 1.15 !important;
+    margin-top: 0.85rem !important;
+    margin-bottom: 0.4rem !important;
+    letter-spacing: 0.005em !important;
+    font-weight: 600 !important;
+}
+
+@media (max-width: 700px) {
+    #project-overview section.fwgbsp > div > h1 {
+        font-size: 1.7rem !important;
+    }
+}
+
+@media (max-width: 550px) {
+    #project-overview section.fwgbsp > div > h1 {
+        font-size: 1.35rem !important;
+    }
+}
+
+/* Card text z-index: ensure it stays above the dot/accent overlay */
+#project-overview section.fwgbsp > div {
+    position: relative;
+    z-index: 2;
+}
+
+/* Article (iframe) above the text div so clicks reach the iframe instead of the
+   transparent right half of the text div, which would otherwise eat them. */
+#project-overview section.fwgbsp > article {
+    z-index: 5 !important;
+}
+
+/* GhostCrypt CTA button: wider so "Ausprobieren 🔓" sits comfortably */
+#project-overview section.ghostcrypt > div > a {
+    width: 185px !important;
+}
+
+/* ============================================================ */
+/* ============== IMPRESSUM PAGE ============================== */
+/* ============================================================ */
+
+.impressum-page main.impressum-main {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 10rem 1.5rem 4rem;
+}
+
+.impressum-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.impressum-hero {
+    text-align: left;
+    margin-bottom: 0.5rem;
+    padding: 0 0.5rem;
+}
+
+.impressum-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem 0;
+    color: var(--clr-font-strong) !important;
+    letter-spacing: -0.01em;
+}
+
+.impressum-hero h1::before {
+    content: "#";
+    color: var(--clr-primary);
+    margin-right: 0.5rem;
+    font-weight: 600;
+    opacity: 0.55;
+}
+
+.impressum-sub {
+    font-size: 0.92rem;
+    color: rgba(230, 237, 243, 0.6) !important;
+    margin: 0;
+    font-family: "Gilroy", Helvetica, Arial, sans-serif !important;
+}
+
+/* Cards: glass surface like the about-me card */
+.impressum-card {
+    width: 100%;
+    padding: 1.75rem 2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    color: var(--clr-font);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.impressum-card:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+}
+
+.impressum-card h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    color: var(--clr-font-strong) !important;
+    display: flex;
+    align-items: baseline;
+    gap: 0.45rem;
+    letter-spacing: 0.005em;
+}
+
+.impressum-card h2 .hash {
+    color: var(--clr-primary);
+    opacity: 0.55;
+    font-weight: 600;
+}
+
+.impressum-card h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 1.2rem 0 0.5rem 0;
+    color: var(--clr-font-strong) !important;
+    letter-spacing: 0.01em;
+}
+
+.impressum-card h3:first-of-type {
+    margin-top: 0;
+}
+
+.impressum-card p {
+    font-family: "Gilroy", Helvetica, Arial, sans-serif !important;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin: 0 0 0.9rem 0;
+    color: rgba(230, 237, 243, 0.85) !important;
+}
+
+.impressum-card p:last-child {
+    margin-bottom: 0;
+}
+
+.impressum-card a {
+    color: #7ea5ff;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(126, 165, 255, 0.4);
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.impressum-card a:hover {
+    color: #a8c0ff;
+    border-bottom-color: rgba(168, 192, 255, 0.7);
+}
+
+/* Contact list */
+.impressum-contact {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    font-family: "Gilroy", Helvetica, Arial, sans-serif !important;
+    font-size: 0.95rem;
+}
+
+.impressum-contact li {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.impressum-contact .label {
+    flex: 0 0 80px;
+    color: rgba(230, 237, 243, 0.55);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+}
+
+/* Back to home */
+.impressum-back {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+/* Footer adjustments for the impressum page */
+.impressum-page #footer {
+    margin-top: 2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.impressum-page #footer span,
+.impressum-page #footer a {
+    color: var(--clr-font) !important;
+}
+
+@media (max-width: 600px) {
+    .impressum-page main.impressum-main {
+        padding: 5rem 1rem 3rem;
+    }
+    .impressum-hero h1 { font-size: 2.2rem; }
+    .impressum-card { padding: 1.4rem 1.3rem; }
+    .impressum-contact li { flex-direction: column; gap: 0.15rem; }
+    .impressum-contact .label { flex: 0; }
+}
+
+/* ============================================================ */
+/* ============== 404 ERROR PAGE ============================== */
+/* ============================================================ */
+
+.error-page main.error-main {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 9rem 1.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.error-hero {
+    text-align: center;
+    padding: 0 0.5rem;
+}
+
+.error-code {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(7rem, 18vw, 11rem);
+    font-weight: 700;
+    line-height: 1;
+    background: linear-gradient(135deg,
+        var(--clr-primary) 0%,
+        #7ea5ff 50%,
+        var(--clr-primary) 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.5rem;
+    animation: error-gradient 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 30px rgba(42, 69, 248, 0.35));
+}
+
+.error-code-zero {
+    display: inline-block;
+    transform-origin: 50% 55%;
+    background: linear-gradient(135deg,
+        var(--clr-primary) 0%,
+        #7ea5ff 50%,
+        var(--clr-primary) 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: error-zero-spin 8s linear infinite,
+               error-gradient 6s ease-in-out infinite;
+}
+
+@keyframes error-gradient {
+    0%, 100% { background-position: 0% 50%; }
+    50%      { background-position: 100% 50%; }
+}
+
+@keyframes error-zero-spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0.5rem 0 0.6rem 0;
+    color: var(--clr-font-strong) !important;
+    letter-spacing: -0.005em;
+}
+
+.error-sub {
+    font-family: "Gilroy", Helvetica, Arial, sans-serif !important;
+    font-size: 1rem;
+    color: rgba(230, 237, 243, 0.7) !important;
+    margin: 0 0 1.8rem 0;
+    line-height: 1.55;
+}
+
+/* Terminal-style error block */
+.error-terminal {
+    display: inline-block;
+    text-align: left;
+    padding: 0.95rem 1.2rem;
+    background: rgba(13, 17, 23, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.terminal-prompt {
+    color: var(--clr-secondary);
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.terminal-cmd {
+    color: var(--clr-font);
+}
+
+.terminal-path {
+    color: #7ea5ff;
+    word-break: break-all;
+}
+
+.terminal-error {
+    color: #ff8b75;
+    font-style: italic;
+}
+
+.error-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+/* Suggested links card */
+.error-suggestions {
+    width: 100%;
+    padding: 1.75rem 2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.error-suggestions h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    color: var(--clr-font-strong) !important;
+    display: flex;
+    align-items: baseline;
+    gap: 0.45rem;
+}
+
+.error-suggestions .hash {
+    color: var(--clr-primary);
+    opacity: 0.55;
+    font-weight: 600;
+}
+
+.error-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.4rem;
+}
+
+.error-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 0.7rem;
+    color: var(--clr-font) !important;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease, color 0.25s ease;
+    font-size: 0.92rem;
+}
+
+.error-links a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: var(--clr-font-strong) !important;
+    transform: translateX(3px);
+}
+
+.error-links .link-icon {
+    color: var(--clr-primary);
+    opacity: 0.7;
+    font-weight: 600;
+    transition: transform 0.25s ease;
+}
+
+.error-links a:hover .link-icon {
+    transform: translateX(2px);
+    opacity: 1;
+}
+
+/* Footer adjustments for 404 */
+.error-page #footer {
+    margin-top: 2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.error-page #footer span,
+.error-page #footer a {
+    color: var(--clr-font) !important;
+}
+
+@media (max-width: 600px) {
+    .error-page main.error-main {
+        padding: 6rem 1rem 3rem;
+        gap: 2rem;
+    }
+    .error-title { font-size: 1.45rem; }
+    .error-sub { font-size: 0.92rem; }
+    .error-terminal { font-size: 0.78rem; }
+    .error-suggestions { padding: 1.4rem 1.3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .error-code, .error-code-zero {
+        animation: none !important;
+    }
+}
+
+/* === Hero Terminal: animated command cycle in a faux-window === */
+.hero-terminal {
+    /* CRITICAL: Override #introduction>div { display: flex; justify-content: center; align-items: center; height: 60px }
+       which would otherwise turn the terminal box itself into a flex container that centers everything inside. */
+    display: block !important;
+    justify-content: initial !important;
+    align-items: initial !important;
+    flex-direction: initial !important;
+    height: auto !important;
+
+    width: 92%;
+    max-width: 720px;
+    margin: 2.5rem auto 0;
+    background: rgba(13, 17, 23, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 14px;
+    box-shadow:
+        0 18px 48px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(255, 255, 255, 0.03),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* macOS-style title bar */
+.hero-terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    position: relative;
+}
+
+.hero-terminal-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.hero-terminal-dot.dot-red    { background: #ff5f57; box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.2); }
+.hero-terminal-dot.dot-yellow { background: #febc2e; box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.2); }
+.hero-terminal-dot.dot-green  { background: #28c840; box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.2); }
+
+.hero-terminal-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(230, 237, 243, 0.4);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    pointer-events: none;
+}
+
+.hero-terminal-body {
+    padding: 1.6rem 1.7rem 1.7rem;
+    font-size: 1.02rem;
+    line-height: 1.55;
+    min-height: 9rem;
+    text-align: left !important;
+    font-weight: 700;
+    display: block !important;
+}
+
+.terminal-line {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.terminal-line + .terminal-line {
+    margin-top: 0.2rem;
+}
+
+.terminal-line .terminal-prompt {
+    color: var(--clr-secondary);
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.terminal-line .terminal-cmd {
+    color: var(--clr-font);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.terminal-output {
+    color: rgba(230, 237, 243, 0.78);
+    padding-left: calc(2.5em + 0.5rem); /* align under the command */
+    min-height: 1.7em;
+    transition: opacity 0.35s ease;
+}
+
+.terminal-output .out-accent {
+    color: #7ea5ff;
+}
+
+.terminal-output .out-muted {
+    color: rgba(230, 237, 243, 0.5);
+}
+
+/* Blinking cursor — coral to match the arrow */
+.terminal-cursor {
+    display: inline-block;
+    width: 9px;
+    height: 1.05em;
+    background: #f78166;
+    margin-left: 3px;
+    vertical-align: text-bottom;
+    animation: terminal-blink 1s steps(2) infinite;
+    box-shadow: 0 0 8px rgba(247, 129, 102, 0.6);
+    border-radius: 1px;
+}
+
+@keyframes terminal-blink {
+    50% { opacity: 0; }
+}
+
+/* Pause cursor blink while typing for clarity */
+.hero-terminal.typing .terminal-cursor {
+    animation: none;
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .hero-terminal {
+        width: 92%;
+        font-size: 0.75rem;
+    }
+    .hero-terminal-body {
+        padding: 0.85rem 1rem;
+        font-size: 0.78rem;
+    }
+    .hero-terminal-title { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .terminal-cursor { animation: none; }
+}
+
+/* === Hero terminal: Arch-style two-line prompt === */
+.terminal-prompt-line,
+.terminal-cmd-line {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.5rem !important;
+    flex-wrap: nowrap !important;
+    line-height: 1.5;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+}
+
+/* Output is plain block, indented under the command */
+.hero-terminal .terminal-output {
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+    padding-left: 2rem !important;
+    margin: 0.2rem 0 0 0 !important;
+}
+
+.prompt-bracket {
+    color: #3fb950;          /* Brand secondary green — like powerlevel10k */
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.terminal-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.arch-icon { color: #1793D1; }   /* Official Arch blue */
+
+.hero-terminal:hover .arch-icon {
+    transform: rotate(-8deg) scale(1.15);
+}
+
+.prompt-user {
+    color: #3fb950;          /* Bright green — user, like a real shell */
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.prompt-path {
+    color: #7ea5ff;          /* Light blue — path */
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.prompt-arrow {
+    color: #f78166;          /* Coral — arrow, like the brand tertiary */
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-right: 0.15rem;
+    font-size: 1.05em;
+}
+
+.hero-terminal-body .terminal-cmd {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+/* All output text is bold too */
+.terminal-output { font-weight: 700; }
+.out-accent     { font-weight: 700; }
+.out-muted      { font-weight: 600; }
+
+/* Output sits on its own line, indented under the command */
+.terminal-output {
+    padding-left: 2rem !important;
+    margin-top: 0.2rem;
+    line-height: 1.5;
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+/* Smaller icons on mobile */
+@media (max-width: 600px) {
+    .terminal-icon { width: 12px; height: 12px; }
+    .terminal-prompt-line, .terminal-cmd-line { gap: 0.35rem; }
+}
+
+/* Less top space above the hero CTAs (GitHub / E-Mail) */
+#introduction > article {
+    margin-top: 1.5rem !important;
+}
+
+/* ============================================================ */
+/* ============== FULLY RESPONSIVE LAYER ====================== */
+/* ============================================================ */
+
+/* ===== Tablet & smaller laptop (≤1024px) ===== */
+@media (max-width: 1024px) {
+    main { padding-top: calc(80px + 3rem); }
+
+    main > section > h1 {
+        font-size: 1.7rem;
+        margin-left: 5%;
+    }
+
+    /* Project section uses 95% on smaller widths (already in base CSS) */
+    #project-overview section.fwgbsp > div > h1 { font-size: 2rem !important; }
+}
+
+/* ===== Tablet (≤900px) ===== */
+@media (max-width: 900px) {
+    /* Hero spacing tighter */
+    #introduction { padding: 0 1rem; }
+    .important-text { width: 88% !important; font-size: 1rem !important; }
+
+    /* Terminal smaller and lighter */
+    .hero-terminal { max-width: 95% !important; margin-top: 2rem !important; }
+    .hero-terminal-body {
+        padding: 1.1rem 1.2rem !important;
+        font-size: 0.85rem !important;
+        min-height: 7rem !important;
+    }
+    .terminal-icon { width: 16px; height: 16px; }
+
+    /* Section headings smaller */
+    main > section > h1 { font-size: 1.5rem; }
+
+    /* Project sections: pinning disabled at this width, fallback layout from earlier */
+    #project-overview section > div > h1 { font-size: 2.4rem !important; }
+    #project-overview section.fwgbsp > div > h1 { font-size: 1.9rem !important; }
+
+    /* About me card */
+    #about-me > .important-text {
+        width: 90% !important;
+        padding: 1.4rem 1.5rem !important;
+    }
+
+    /* Support card */
+    #support {
+        width: 92% !important;
+        padding: 2.2rem 1.8rem !important;
+        border-radius: 50px !important;
+    }
+}
+
+/* ===== Phone (≤700px) ===== */
+@media (max-width: 700px) {
+    main { padding-top: calc(80px + 2rem); }
+
+    /* Hero rows: tighter, smaller images already handled in base */
+    #introduction > div { gap: 0.6rem; }
+
+    /* Hero terminal */
+    .hero-terminal {
+        margin-top: 1.5rem !important;
+        max-width: 96% !important;
+    }
+    .hero-terminal-body {
+        padding: 0.95rem 1rem !important;
+        font-size: 0.78rem !important;
+        line-height: 1.5 !important;
+        min-height: 6.5rem !important;
+    }
+    .terminal-icon { width: 14px !important; height: 14px !important; }
+    .terminal-cursor { width: 7px; height: 0.95em; }
+    .hero-terminal .terminal-output { padding-left: 1.5rem !important; }
+
+    /* Hero buttons stack-friendly */
+    #introduction > article {
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-top: 1.25rem !important;
+    }
+    .primary-btn, .secondary-btn {
+        height: 42px !important;
+        font-size: 0.88rem !important;
+    }
+    .hero-github svg { width: 14px; height: 14px; }
+
+    /* Section headings + # caret */
+    main > section > h1 { font-size: 1.35rem; }
+
+    /* Project cards on phone */
+    #project-overview section > div { padding: 2rem 1.5rem !important; }
+    #project-overview section > div > img { width: 60px !important; height: 60px !important; }
+    #project-overview section > div > h1 { font-size: 2rem !important; }
+    #project-overview section.fwgbsp > div > h1 { font-size: 1.5rem !important; }
+    #project-overview section > div > p { font-size: 0.95rem !important; padding-top: 1rem !important; }
+    #project-overview section > div > a {
+        margin-top: 1.5rem !important;
+        height: 38px !important;
+        font-size: 0.88rem !important;
+    }
+    #project-overview section.ghostcrypt > div > a { width: 165px !important; }
+
+    /* Certificates: smaller cards */
+    #certificates > .container { width: 92% !important; }
+    #certificates > .container .row .col-3 {
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 140px !important;
+        padding: 1rem !important;
+    }
+    #certificates > .container .row .col-3 h1 { font-size: 1.05rem !important; }
+
+    /* Footer: stack on mobile */
+    #footer {
+        height: auto !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        padding: 1.2rem 1rem !important;
+        gap: 0.4rem;
+        text-align: center;
+    }
+    #footer > span, #footer > a {
+        position: static !important;
+        font-size: 0.85rem;
+    }
+
+    /* Impressum + 404 */
+    .impressum-page main.impressum-main { padding: 7rem 1rem 3rem !important; }
+    .impressum-hero h1 { font-size: 2rem !important; }
+    .error-page main.error-main { padding: 6rem 1rem 3rem !important; }
+}
+
+/* ===== Small phone (≤530px) — nav becomes icon-only ===== */
+@media (max-width: 530px) {
+    /* Hide button labels, keep only icons */
+    #navigation > .nav-github-btn span,
+    #navigation > .nav-instagram-btn span {
+        display: none;
+    }
+    #navigation > .nav-github-btn,
+    #navigation > .nav-instagram-btn {
+        padding: 0 0.55rem !important;
+        gap: 0 !important;
+        min-width: 30px;
+    }
+    #navigation > .nav-github-btn svg,
+    #navigation > .nav-instagram-btn svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+    /* Hide flexible spacer so brand buttons sit closer */
+    #navigation > div { display: none !important; margin: 0 !important; }
+    /* Tighter spacing */
+    #navigation > * { margin-left: 0.3rem !important; margin-right: 0.3rem !important; }
+    #navigation > a:not(.nav-support-btn) { font-size: 0.78rem !important; }
+
+    /* Important text and other prose: tighter */
+    .important-text { width: 92% !important; font-size: 0.95rem !important; }
+
+    /* Hero terminal mini */
+    .hero-terminal-body {
+        font-size: 0.72rem !important;
+        padding: 0.85rem 0.9rem !important;
+        min-height: 5.8rem !important;
+    }
+
+    /* Smaller buttons */
+    .primary-btn, .secondary-btn {
+        height: 40px !important;
+        padding: 0 1.2rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* Project preview images */
+    #project-overview section > article > img:not(.responsive-exclusion) {
+        height: 420px !important;
+    }
+
+    /* Even tighter project text */
+    #project-overview section > div > h1 { font-size: 1.7rem !important; }
+    #project-overview section.ghostcrypt > div > h1 { font-size: 1.6rem !important; }
+    #project-overview section.fwgbsp > div > h1 { font-size: 1.3rem !important; }
+}
+
+/* ===== Tiny phones (≤400px) ===== */
+@media (max-width: 400px) {
+    html { font-size: 14px; }
+    #navigation > a:not(.nav-support-btn) { font-size: 0.74rem !important; }
+    #navigation > span { margin: 0 0.15rem !important; }
+    #navigation > .nav-github-btn,
+    #navigation > .nav-instagram-btn {
+        padding: 0 0.45rem !important;
+        height: 28px !important;
+    }
+    #nav-area.nav-scrolled #navigation > .nav-github-btn,
+    #nav-area.nav-scrolled #navigation > .nav-instagram-btn {
+        height: 22px !important;
+        padding: 0 0.4rem !important;
+    }
+
+    /* Hero rows even smaller */
+    #introduction > div > h1 { font-size: 1.05rem !important; }
+    #introduction > div { height: 38px !important; gap: 0.4rem; }
+    #introduction img { height: 32px !important; border-radius: 10px !important; }
+
+    main > section > h1 {
+        font-size: 1.15rem !important;
+        margin-left: 4% !important;
+    }
+
+    #project-overview section > div > h1 { font-size: 1.5rem !important; }
+    #project-overview section.fwgbsp > div > h1 { font-size: 1.15rem !important; }
+}
+
+/* ===== Landscape phones (low height) ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+    #introduction { min-height: auto; }
+    .hero-terminal { display: none; }  /* save vertical space */
+    main { padding-top: 5.5rem; }
+}
+
+/* ===== Touch-only: disable hover-dependent fancy effects ===== */
+@media (hover: none), (pointer: coarse) {
+    /* Disable card hover lifts for cleaner touch experience */
+    #project-overview section:hover { transform: none !important; }
+
+    /* Project preview parallax / scaling — no hover effect */
+    #project-overview section:hover > article > img { transform: translateY(.85rem) !important; }
+}
+
+/* ============================================================ */
+/* === FIX-UP RESPONSIVE PASS ================================= */
+/* ============================================================ */
+
+/* === 1. Texts that contain .highlight pills need extra line-height ===
+   The marker pill has padding 0.18em 0.42em. Without enough room between
+   lines, the pill background overlaps neighboring lines. */
+.important-text,
+#about-me > .important-text,
+#about-me p,
+.impressum-card p,
+p:has(.highlight) {
+    line-height: 1.95 !important;
+}
+
+/* === 2. Mobile project cards: clear the blur+transform leftover from pinning ===
+   When pinning is disabled, JS removes .stack-active, but the base
+   .project-stack-sticky > section state (opacity:0, blur, scaled-down) would
+   remain unless we force-clear it here. */
+@media (max-width: 915px), (prefers-reduced-motion: reduce) {
+    .project-stack-sticky > section {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        pointer-events: auto !important;
+        z-index: auto !important;
+        transition: none !important;
+        will-change: auto !important;
+    }
+}
+
+/* === 3. Nav switches to icon-only earlier (768px) and box gets a touch wider === */
+@media (max-width: 768px) {
+    /* Hide GitHub / Instagram labels — keep only icons */
+    #navigation > .nav-github-btn span,
+    #navigation > .nav-instagram-btn span {
+        display: none;
+    }
+    #navigation > .nav-github-btn,
+    #navigation > .nav-instagram-btn {
+        padding: 0 0.55rem !important;
+        gap: 0 !important;
+        min-width: 32px;
+    }
+    #navigation > .nav-github-btn svg,
+    #navigation > .nav-instagram-btn svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+    /* Hide the flexible spacer so the brand buttons sit closer to the links */
+    #navigation > div { display: none !important; margin: 0 !important; }
+    /* Tighter spacing between items */
+    #navigation > * { margin-left: 0.32rem !important; margin-right: 0.32rem !important; }
+
+    /* Give the bar a touch more horizontal padding so it doesn't feel cramped */
+    #navigation { padding: 0 1rem !important; }
+    #nav-area.nav-scrolled #navigation { padding: 0 0.85rem !important; }
+}
+
+/* === Re-clamp the under-530px rule so it stays compact (the 768px rule is now the icon-only switch) === */
+@media (max-width: 530px) {
+    #navigation > a:not(.nav-support-btn) { font-size: 0.78rem !important; }
+}
+
+/* ============================================================ */
+/* === SUPPORT SECTION REDESIGN =============================== */
+/* ============================================================ */
+
+#support {
+    width: 88% !important;
+    max-width: 920px !important;
+    min-height: auto !important;
+    margin: 4rem auto !important;
+    padding: 3.5rem 3rem !important;
+    border-radius: 32px !important;
+    background: linear-gradient(165deg, #ffd60a 0%, #ffb800 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.45) !important;
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.06),
+        0 18px 50px rgba(255, 200, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.08) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle dot pattern overlay for texture */
+#support::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background-image:
+        radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.07) 1px, transparent 0),
+        radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.5) 0%, transparent 50%) !important;
+    background-size: 24px 24px, 100% 100% !important;
+    pointer-events: none !important;
+    opacity: 0.85 !important;
+    border-radius: inherit !important;
+    height: auto !important;
+}
+
+/* Big decorative emoji floating in the corner */
+#support::after {
+    content: "❤️";
+    position: absolute !important;
+    bottom: -1.5rem;
+    right: -1rem;
+    font-size: 9rem;
+    opacity: 0.12;
+    transform: rotate(-12deg);
+    pointer-events: none;
+    border: none !important;
+    inset: auto !important;
+    background: none !important;
+    line-height: 1;
+}
+
+.support-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+#support h1 {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: #1a1a1a !important;
+    margin: 0 0 1.25rem 0 !important;
+    letter-spacing: -0.005em;
+    line-height: 1.2;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+#support h1::before {
+    content: "#";
+    color: rgba(0, 0, 0, 0.55);
+    margin-right: 0.4rem;
+    font-weight: 600;
+}
+
+#support p {
+    color: rgba(15, 15, 15, 0.92) !important;
+    font-size: 1rem !important;
+    line-height: 1.75 !important;
+    max-width: 620px;
+    margin: 0 auto 0.6rem auto !important;
+    font-family: "Gilroy", Helvetica, Arial, sans-serif !important;
+    font-weight: 500 !important;
+}
+
+#support p strong {
+    color: #1a1a1a !important;
+    font-weight: 700;
+}
+
+.support-thanks {
+    margin-top: 1.2rem !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    color: #1a1a1a !important;
+}
+
+.support-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.85rem;
+    margin-top: 2.4rem;
+}
+
+.support-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.6rem !important;
+    height: 48px !important;
+    padding: 0 1.5rem !important;
+    border-radius: 14px !important;
+    font-weight: 600 !important;
+    font-size: 0.92rem !important;
+    text-decoration: none !important;
+    letter-spacing: 0.005em;
+    transition:
+        transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        background 0.25s ease,
+        color 0.25s ease !important;
+    backdrop-filter: none !important;
+}
+
+.support-btn:hover {
+    transform: translateY(-2px) !important;
+}
+
+.support-btn:active {
+    transform: scale(0.95) !important;
+    transition: transform 0.1s ease-out !important;
+}
+
+.support-btn svg {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+}
+
+/* Buy Me a Coffee — dark for contrast on yellow card */
+.support-bmc {
+    background: #1a1a1a !important;
+    color: #ffd60a !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.2),
+        0 6px 18px rgba(0, 0, 0, 0.28) !important;
+}
+
+.support-bmc:hover {
+    background: #2a2a2a !important;
+    color: #ffd60a !important;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.22),
+        0 10px 26px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* PayPal — official PayPal blue */
+.support-paypal {
+    background: #003087 !important;
+    color: #ffffff !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.22) !important;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.18),
+        0 6px 18px rgba(0, 48, 135, 0.42) !important;
+}
+
+.support-paypal:hover {
+    background: #00256b !important;
+    color: #ffffff !important;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.22),
+        0 10px 26px rgba(0, 48, 135, 0.55) !important;
+}
+
+/* Smooth lift on the whole card on hover */
+#support {
+    transition:
+        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#support:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.06),
+        0 24px 60px rgba(255, 200, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Override the old #support > a margin-top inherited from base CSS */
+#support .support-actions a {
+    margin-top: 0 !important;
+}
+
+/* Mobile support card */
+@media (max-width: 700px) {
+    #support {
+        padding: 2.5rem 1.6rem !important;
+        margin: 3rem auto !important;
+        border-radius: 28px !important;
+    }
+    #support h1 {
+        font-size: 1.55rem !important;
+    }
+    #support p {
+        font-size: 0.95rem !important;
+        line-height: 1.7 !important;
+    }
+    .support-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.65rem;
+    }
+    .support-btn {
+        width: 100%;
+        height: 46px !important;
+    }
+    #support::after {
+        font-size: 6rem;
+        bottom: -1rem;
+        right: -0.5rem;
+    }
+}
+
+/* === Support button click animation: brand pulse + particle burst === */
+
+/* Material-style ripple-out pulse, brand-colored per button */
+.support-bmc.support-clicked {
+    animation: bmc-pulse 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.support-paypal.support-clicked {
+    animation: paypal-pulse 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes bmc-pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2),
+                    0 6px 18px rgba(0, 0, 0, 0.28),
+                    0 0 0 0 rgba(255, 214, 10, 0.7);
+    }
+    25% {
+        transform: scale(0.95);
+    }
+    60% {
+        transform: scale(1.06);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2),
+                    0 14px 30px rgba(0, 0, 0, 0.3),
+                    0 0 0 18px rgba(255, 214, 10, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2),
+                    0 6px 18px rgba(0, 0, 0, 0.28),
+                    0 0 0 0 rgba(255, 214, 10, 0);
+    }
+}
+
+@keyframes paypal-pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18),
+                    0 6px 18px rgba(0, 48, 135, 0.42),
+                    0 0 0 0 rgba(0, 100, 255, 0.6);
+    }
+    25% {
+        transform: scale(0.95);
+    }
+    60% {
+        transform: scale(1.06);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18),
+                    0 14px 30px rgba(0, 48, 135, 0.55),
+                    0 0 0 18px rgba(0, 100, 255, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18),
+                    0 6px 18px rgba(0, 48, 135, 0.42),
+                    0 0 0 0 rgba(0, 100, 255, 0);
+    }
+}
+
+/* Floating particles (☕ / ❤️) — JS appends them to body */
+.support-particle {
+    position: fixed;
+    font-size: 1.7rem;
+    line-height: 1;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    animation: support-particle-float 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    will-change: transform, opacity;
+    user-select: none;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+}
+
+@keyframes support-particle-float {
+    0% {
+        transform: translate(-50%, -50%) scale(0.4) rotate(0deg);
+        opacity: 0;
+    }
+    18% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.3) rotate(0deg);
+    }
+    100% {
+        transform: translate(
+            calc(-50% + var(--tx, 0px)),
+            calc(-50% + var(--ty, 0px))
+        ) scale(var(--scale-end, 0.7)) rotate(var(--rot, 0deg));
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .support-particle { display: none !important; }
+    .support-clicked { animation: none !important; }
 }
