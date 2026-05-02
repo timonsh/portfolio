@@ -3571,3 +3571,39 @@ p:has(.highlight) {
         min-height: calc(4.7em + 1.6rem) !important;
     }
 }
+
+/* === FORCE 3-line height on the terminal box (mobile fix, attempt 3) ===
+   Use absolute pixel min-heights so the dynamic clamp() font doesn't shrink
+   the container below 3 line-heights worth of room. */
+.hero-terminal-body {
+    min-height: 140px !important;
+}
+
+.hero-terminal .terminal-output {
+    min-height: 22px !important;
+    display: block !important;
+}
+
+@media (max-width: 700px) {
+    .hero-terminal-body {
+        min-height: 115px !important;
+    }
+    .hero-terminal .terminal-output {
+        min-height: 18px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-terminal-body {
+        min-height: 100px !important;
+    }
+    .hero-terminal .terminal-output {
+        min-height: 16px !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-terminal-body {
+        min-height: 88px !important;
+    }
+}
