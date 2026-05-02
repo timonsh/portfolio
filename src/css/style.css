@@ -3607,3 +3607,39 @@ p:has(.highlight) {
         min-height: 88px !important;
     }
 }
+
+/* === ABSOLUTE FIX: pin min-height on the BOX itself (not just body) ===
+   Plus force every line to reserve at least one line-height of space. */
+.hero-terminal {
+    min-height: 145px !important;
+}
+
+.hero-terminal-body,
+.hero-terminal-body > * {
+    box-sizing: border-box;
+}
+
+.hero-terminal .terminal-prompt-line,
+.hero-terminal .terminal-cmd-line {
+    min-height: 1.55em !important;
+}
+
+.hero-terminal .terminal-output {
+    min-height: 1.55em !important;
+    display: block !important;
+}
+
+@media (max-width: 700px) {
+    .hero-terminal { min-height: 120px !important; }
+    .hero-terminal-body { min-height: 100px !important; }
+}
+
+@media (max-width: 480px) {
+    .hero-terminal { min-height: 105px !important; }
+    .hero-terminal-body { min-height: 88px !important; }
+}
+
+@media (max-width: 380px) {
+    .hero-terminal { min-height: 95px !important; }
+    .hero-terminal-body { min-height: 80px !important; }
+}
