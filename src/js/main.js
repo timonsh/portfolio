@@ -4,7 +4,7 @@
 
 const meta = {
     id: 'timonsh',
-    version: 'v2.1.1',
+    version: 'v3.0.0',
     name: 'Timon Schroth [timonsh] · WebByte Studio',
     creator: 'webbytestudio',
 };
@@ -40,6 +40,9 @@ function preview_image(event, img_src) {
 /* Navigation */
 
 document.addEventListener('DOMContentLoaded', () => {
+    /* Boot screen: full webbyteOS boot only once per session */
+    setupBootScreen();
+
     const navLinks = document.querySelectorAll('#navigation .nav-link');
     const sections = [];
 
@@ -135,11 +138,17 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Hero terminal: typewriter cycling through commands */
     setupHeroTerminal();
 
-    /* Support buttons: particle burst + pulse before navigating */
-    setupSupportButtons();
-
-    /* Project stack: pin sticky container, switch active card on scroll */
+    /* Project stack: pin sticky container, glide cards on scroll */
     setupProjectStack();
+
+    /* Cookie consent: GA only after opt-in (DSGVO / TDDDG) */
+    setupCookieConsent();
+
+    /* Custom cursor: dot + trailing ring (fine pointer only) */
+    setupCustomCursor();
+
+    /* Thin scroll progress bar at the top edge */
+    setupScrollProgress();
 
     /* Nav: compact + widened state once user scrolled past hero */
     const navArea = document.getElementById('nav-area');
@@ -265,13 +274,19 @@ function setupLiveEmbed() {
         }
     });
 }
-/* Project stack: pin section, switch active card based on scroll position */
+/* Project stack: pinned container with snap-scrolling between cards.
+   While the stack is pinned, one wheel/key gesture advances exactly one card
+   (an eased scroll animation moves to the next segment center; momentum is
+   swallowed while it runs). Rendering itself stays continuous: a lerped
+   virtual position follows the scroll, so every switch is a fluid crossfade.
+   You can never rest "between" two cards — an idle settle-snap pulls any
+   off-center position (scrollbar drags, entry momentum) to the nearest card. */
 function setupProjectStack() {
     const wrapper = document.querySelector('.project-stack-wrapper');
     if (!wrapper) return;
     const sticky = wrapper.querySelector('.project-stack-sticky');
     if (!sticky) return;
-    const cards = sticky.querySelectorAll(':scope > section');
+    const cards = Array.from(sticky.querySelectorAll(':scope > section'));
     if (!cards.length) return;
 
     wrapper.style.setProperty('--card-count', cards.length);
@@ -290,51 +305,210 @@ function setupProjectStack() {
         dot.dataset.idx = i;
         const label = card.querySelector('h1');
         dot.title = label ? label.textContent.trim() : `Projekt ${i + 1}`;
-        dot.addEventListener('click', () => {
-            // getBoundingClientRect + scrollY gives reliable absolute Y regardless of layout
-            const rect = wrapper.getBoundingClientRect();
-            const wrapperTop = rect.top + window.scrollY;
-            const range = wrapper.offsetHeight - window.innerHeight;
-            // Land in the middle of the i-th segment so the right card activates
-            const target = wrapperTop + (range * (i + 0.5)) / cards.length;
-            window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
-        });
+        dot.addEventListener('click', () => snapTo(i, 850));
         progress.appendChild(dot);
     });
     document.body.appendChild(progress);
     const dots = progress.querySelectorAll('button');
 
-    let activeIdx = -1;
-    const setActive = (newIdx) => {
-        if (newIdx === activeIdx) return;
-        activeIdx = newIdx;
-        cards.forEach((card, i) => {
-            card.classList.toggle('stack-active', i === activeIdx);
-            card.classList.toggle('stack-prev', i < activeIdx);
-        });
-        dots.forEach((d, i) => d.classList.toggle('active', i === activeIdx));
-    };
+    const N = cards.length;
+    const HOLD = 0.28;      // central fraction of each segment where a card rests fully visible
+    const SMOOTH = 7.5;     // 1/s — time-based easing rate, identical feel on 60 and 144 Hz
 
-    let ticking = false;
-    const update = () => {
+    let target = 0;         // scroll-derived position in [0, n-1]
+    let current = 0;        // smoothed position that the cards actually render from
+    let rafId = null;
+    let lastTime = 0;
+    let activeDot = -1;
+
+    const computeTarget = () => {
         const rect = wrapper.getBoundingClientRect();
         const range = wrapper.offsetHeight - window.innerHeight;
-        const p = range > 0
-            ? Math.max(0, Math.min(1, -rect.top / range))
-            : 0;
-        const idx = Math.min(
-            Math.floor(p * cards.length),
-            cards.length - 1
-        );
-        setActive(idx);
-        ticking = false;
+        const p = range > 0 ? Math.max(0, Math.min(1, -rect.top / range)) : 0;
+        // Card i is centered in the middle of its scroll segment
+        target = Math.max(0, Math.min(cards.length - 1, p * cards.length - 0.5));
     };
 
-    const onScroll = () => {
-        if (!ticking) {
-            requestAnimationFrame(update);
-            ticking = true;
+    // Flatten |d| ≤ HOLD to 0 → every card gets a rest zone where it sits still
+    const shape = (d) => {
+        const ad = Math.abs(d);
+        if (ad <= HOLD) return 0;
+        return Math.sign(d) * (ad - HOLD) / (1 - HOLD);
+    };
+
+    const easeOut = t => 1 - Math.pow(1 - t, 2);
+
+    const render = () => {
+        cards.forEach((card, i) => {
+            const t = shape(i - current);   // 0 = resting · +1 = waiting below · -1 = gone above
+            const away = Math.min(1, Math.abs(t));
+            const presence = easeOut(1 - away);
+            const y = t * 90;
+            const scale = 1 - away * 0.06;
+            const blur = (1 - presence) * 5;
+
+            card.style.opacity = presence.toFixed(3);
+            card.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0) scale(${scale.toFixed(4)})`;
+            card.style.filter = blur > 0.05 ? `blur(${blur.toFixed(2)}px)` : 'none';
+            card.style.zIndex = String(100 - Math.round(away * 50));
+            card.style.pointerEvents = away < 0.5 ? 'auto' : 'none';
+        });
+
+        const idx = Math.round(current);
+        if (idx !== activeDot) {
+            activeDot = idx;
+            dots.forEach((d, i) => d.classList.toggle('active', i === idx));
         }
+    };
+
+    const tick = (now) => {
+        const dt = lastTime ? Math.min(0.1, (now - lastTime) / 1000) : 1 / 60;
+        lastTime = now;
+        current += (target - current) * (1 - Math.exp(-SMOOTH * dt));
+        if (Math.abs(target - current) < 0.0015) {
+            current = target;
+            render();
+            lastTime = 0;
+            rafId = null;
+            return;
+        }
+        render();
+        rafId = requestAnimationFrame(tick);
+    };
+
+    const kick = () => {
+        computeTarget();
+        if (!rafId) rafId = requestAnimationFrame(tick);
+        scheduleSettle();
+    };
+
+    /* --- Snap scrolling: one gesture = exactly one card --- */
+
+    // Fractional, unclamped scroll position in card units (card i rests at i)
+    const fracPos = () => {
+        const rect = wrapper.getBoundingClientRect();
+        const range = wrapper.offsetHeight - window.innerHeight;
+        const p = range > 0 ? -rect.top / range : 0;
+        return p * N - 0.5;
+    };
+
+    const segCenterY = (i) => {
+        const rect = wrapper.getBoundingClientRect();
+        const wrapperTop = rect.top + window.scrollY;
+        const range = wrapper.offsetHeight - window.innerHeight;
+        return wrapperTop + (range * (i + 0.5)) / N;
+    };
+
+    // The stack counts as pinned while the sticky area fills the viewport
+    const isPinned = () => {
+        const rect = wrapper.getBoundingClientRect();
+        return rect.top <= 1 && rect.bottom >= window.innerHeight - 1;
+    };
+
+    let snapAnim = null;
+    let snapLock = false;
+    let settleTimer = null;
+
+    const animateScrollTo = (toY, duration, done) => {
+        if (snapAnim) cancelAnimationFrame(snapAnim);
+        const fromY = window.scrollY;
+        const delta = toY - fromY;
+        if (Math.abs(delta) < 1) {
+            snapAnim = null;
+            if (done) done();
+            return;
+        }
+        const t0 = performance.now();
+        const ease = t => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+        const step = (now) => {
+            const t = Math.min(1, (now - t0) / duration);
+            // 'instant' — the page-wide CSS scroll-behavior:smooth would turn
+            // every per-frame set into a native smooth scroll and fight us
+            window.scrollTo({ top: fromY + delta * ease(t), behavior: 'instant' });
+            if (t < 1) {
+                snapAnim = requestAnimationFrame(step);
+            } else {
+                snapAnim = null;
+                if (done) done();
+            }
+        };
+        snapAnim = requestAnimationFrame(step);
+    };
+
+    const snapTo = (idx, duration = 800) => {
+        snapLock = true;
+        clearTimeout(settleTimer);
+        animateScrollTo(segCenterY(idx), duration, () => {
+            // Keep swallowing trackpad momentum for a beat after arrival
+            setTimeout(() => { snapLock = false; }, 300);
+        });
+    };
+
+    const stepCards = (dir) => {
+        const pos = fracPos();
+        const idx = dir > 0
+            ? Math.min(N - 1, Math.ceil(pos + 0.05))
+            : Math.max(0, Math.floor(pos - 0.05));
+        snapTo(idx);
+    };
+
+    // Distinguish a fresh scroll gesture from a decaying trackpad momentum
+    // tail: fresh = pause since the last wheel event, a clearly growing
+    // delta, or the constant large notches of a discrete mouse wheel.
+    let lastWheelT = 0;
+    let lastDelta = 0;
+    const isFreshGesture = (delta, now) => {
+        const gap = now - lastWheelT;
+        if (gap > 220) return true;
+        const abs = Math.abs(delta);
+        if (abs > Math.abs(lastDelta) * 1.6 + 2) return true;
+        return abs >= 80 && Math.abs(abs - Math.abs(lastDelta)) < 1;
+    };
+
+    const onWheel = (e) => {
+        if (e.ctrlKey) return;                 // pinch-zoom
+        if (!isPinned()) return;
+        const dir = e.deltaY > 0 ? 1 : e.deltaY < 0 ? -1 : 0;
+        if (!dir) return;
+        const pos = fracPos();
+        // Resting on an edge card + scrolling outward → hand back to the page
+        if (dir > 0 && pos >= N - 1 - 0.02) return;
+        if (dir < 0 && pos <= 0.02) return;
+        e.preventDefault();
+        const now = performance.now();
+        const fresh = isFreshGesture(e.deltaY, now);
+        lastWheelT = now;
+        lastDelta = e.deltaY;
+        if (snapLock || !fresh) return;
+        stepCards(dir);
+    };
+
+    const onKey = (e) => {
+        if (e.altKey || e.ctrlKey || e.metaKey) return;
+        if (e.target instanceof Element && e.target.closest('button, a, input, textarea, select')) return;
+        if (!isPinned()) return;
+        let dir = 0;
+        if (e.key === 'ArrowDown' || e.key === 'PageDown' || (e.key === ' ' && !e.shiftKey)) dir = 1;
+        else if (e.key === 'ArrowUp' || e.key === 'PageUp' || (e.key === ' ' && e.shiftKey)) dir = -1;
+        else return;
+        const pos = fracPos();
+        if (dir > 0 && pos >= N - 1 - 0.02) return;
+        if (dir < 0 && pos <= 0.02) return;
+        e.preventDefault();
+        if (snapLock) return;
+        stepCards(dir);
+    };
+
+    // Any other scroll input (scrollbar drag, entry momentum): once it goes
+    // quiet, pull the nearest card to rest — never park between two cards.
+    const scheduleSettle = () => {
+        clearTimeout(settleTimer);
+        settleTimer = setTimeout(() => {
+            if (snapLock || !isPinned()) return;
+            const pos = fracPos();
+            const nearest = Math.max(0, Math.min(N - 1, Math.round(pos)));
+            if (Math.abs(pos - nearest) > 0.04) snapTo(nearest, 650);
+        }, 150);
     };
 
     // Show/hide the progress indicator only while we're in the pinned area
@@ -352,25 +526,37 @@ function setupProjectStack() {
     );
 
     const enable = () => {
-        window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('resize', onScroll, { passive: true });
-        update();
+        window.addEventListener('scroll', kick, { passive: true });
+        window.addEventListener('resize', kick, { passive: true });
+        window.addEventListener('wheel', onWheel, { passive: false });
+        window.addEventListener('keydown', onKey);
+        computeTarget();
+        current = target;   // no glide on initial paint
+        render();
     };
 
     const disable = () => {
-        window.removeEventListener('scroll', onScroll);
-        window.removeEventListener('resize', onScroll);
-        cards.forEach(c => c.classList.remove('stack-active', 'stack-prev'));
+        window.removeEventListener('scroll', kick);
+        window.removeEventListener('resize', kick);
+        window.removeEventListener('wheel', onWheel);
+        window.removeEventListener('keydown', onKey);
+        if (rafId) {
+            cancelAnimationFrame(rafId);
+            rafId = null;
+        }
+        if (snapAnim) {
+            cancelAnimationFrame(snapAnim);
+            snapAnim = null;
+        }
+        clearTimeout(settleTimer);
+        snapLock = false;
+        cards.forEach(c => { c.style.cssText = ''; });
         dots.forEach(d => d.classList.remove('active'));
         progress.classList.remove('visible');
-        activeIdx = -1;
+        activeDot = -1;
     };
 
-    if (mq.matches) {
-        enable();
-    } else {
-        cards.forEach(c => c.classList.remove('stack-active', 'stack-prev'));
-    }
+    if (mq.matches) enable();
 
     mq.addEventListener('change', (e) => {
         if (e.matches) enable();
@@ -475,63 +661,283 @@ function setupHeroTerminal() {
     }
 }
 
-/* Support buttons: brand-colored pulse + particle burst, then navigate */
-function setupSupportButtons() {
-    const buttons = document.querySelectorAll('.support-btn');
-    if (!buttons.length) return;
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* ============================================================ */
+/* Cookie consent — Google Analytics loads ONLY after opt-in    */
+/* (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG)              */
+/* ============================================================ */
 
-    buttons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const url = btn.href;
-            if (!url) return;
+const CONSENT_KEY = 'wbs-cookie-consent';
+const GA_ID = 'G-ZFXZ4GKQ7J';
 
-            // Reduced motion: just open the link with no theatrics
-            if (reduceMotion) return;
+function loadAnalytics() {
+    if (window.__wbsGaLoaded) return;
+    window.__wbsGaLoaded = true;
+    window['ga-disable-' + GA_ID] = false;
 
-            e.preventDefault();
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
 
-            const isCoffee = btn.classList.contains('support-bmc');
-            const symbol = isCoffee ? '☕' : '❤️';
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+}
 
-            // Re-trigger the pulse class
-            btn.classList.remove('support-clicked');
-            void btn.offsetWidth;
-            btn.classList.add('support-clicked');
+function applyConsent(choice) {
+    try { localStorage.setItem(CONSENT_KEY, choice); } catch (e) { /* storage blocked — session-only */ }
+    if (choice === 'granted') {
+        loadAnalytics();
+    } else {
+        // Official GA kill switch — also stops an already-loaded tracker
+        window['ga-disable-' + GA_ID] = true;
+    }
+}
 
-            // Spawn 7 particles bursting from the button center
-            const rect = btn.getBoundingClientRect();
-            const cx = rect.left + rect.width / 2;
-            const cy = rect.top + rect.height / 2;
-            const COUNT = 7;
+function buildConsentBanner() {
+    const banner = document.createElement('div');
+    banner.id = 'cookie-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Cookie-Einstellungen');
+    banner.innerHTML =
+        '<div class="cookie-banner-inner">' +
+            '<div class="cookie-banner-text">' +
+                '<h2>🍪 Cookies & Analyse</h2>' +
+                '<p>Diese Website möchte Google Analytics nutzen, um die Nutzung anonym auszuwerten. ' +
+                'Der Dienst wird <strong>erst nach deiner Einwilligung</strong> geladen. ' +
+                'Details in der <a href="/impressum.html#datenschutz">Datenschutzerklärung</a>.</p>' +
+            '</div>' +
+            '<div class="cookie-banner-actions">' +
+                '<button type="button" class="cookie-btn cookie-decline">Ablehnen</button>' +
+                '<button type="button" class="cookie-btn cookie-accept">Akzeptieren</button>' +
+            '</div>' +
+        '</div>';
 
-            for (let i = 0; i < COUNT; i++) {
-                const particle = document.createElement('span');
-                particle.className = 'support-particle';
-                particle.textContent = symbol;
-                particle.style.left = cx + 'px';
-                particle.style.top  = cy + 'px';
-
-                // Spread upward in a fan (-70° to +70° from straight up)
-                const angle = (Math.random() - 0.5) * Math.PI * 0.78;
-                const distance = 80 + Math.random() * 60;
-                const tx = Math.sin(angle) * distance;
-                const ty = -Math.cos(angle) * distance - 20;
-                particle.style.setProperty('--tx', tx.toFixed(1) + 'px');
-                particle.style.setProperty('--ty', ty.toFixed(1) + 'px');
-                particle.style.setProperty('--rot', ((Math.random() - 0.5) * 90).toFixed(0) + 'deg');
-                particle.style.setProperty('--scale-end', (0.6 + Math.random() * 0.4).toFixed(2));
-                particle.style.animationDelay = (i * 35) + 'ms';
-
-                document.body.appendChild(particle);
-                setTimeout(() => particle.remove(), 1300);
-            }
-
-            // Navigate after pulse + first wave of particles is visible
-            setTimeout(() => {
-                btn.classList.remove('support-clicked');
-                window.open(url, '_blank', 'noopener');
-            }, 600);
-        });
+    banner.querySelector('.cookie-accept').addEventListener('click', () => {
+        applyConsent('granted');
+        hideConsentBanner();
     });
+    banner.querySelector('.cookie-decline').addEventListener('click', () => {
+        applyConsent('denied');
+        hideConsentBanner();
+    });
+    return banner;
+}
+
+function showConsentBanner() {
+    let banner = document.getElementById('cookie-banner');
+    if (!banner) {
+        banner = buildConsentBanner();
+        document.body.appendChild(banner);
+    }
+    // Double rAF so the entry transition reliably plays after insertion
+    requestAnimationFrame(() => requestAnimationFrame(() => banner.classList.add('show')));
+}
+
+function hideConsentBanner() {
+    const banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+    banner.classList.remove('show');
+    setTimeout(() => banner.remove(), 600);
+}
+
+/* Global — reopens the banner; wired to the "Cookies" footer button via inline onclick */
+function cookie_settings() {
+    showConsentBanner();
+}
+
+function setupCookieConsent() {
+    let stored = null;
+    try { stored = localStorage.getItem(CONSENT_KEY); } catch (e) { /* storage blocked */ }
+
+    if (stored === 'granted') {
+        loadAnalytics();
+    } else if (stored === 'denied') {
+        window['ga-disable-' + GA_ID] = true;
+    } else {
+        showConsentBanner();
+    }
+}
+
+/* ============================================================ */
+/* Boot screen — OS-style opening, full boot once per session   */
+/* ============================================================ */
+
+function setupBootScreen() {
+    const boot = document.getElementById('boot-screen');
+    if (!boot) return;
+
+    let seen = false;
+    try {
+        seen = sessionStorage.getItem('wbs-booted') === '1';
+        sessionStorage.setItem('wbs-booted', '1');
+    } catch (e) { /* storage blocked — always play the full boot */ }
+
+    if (seen) {
+        // Within the same session: skip the boot, run the short intro instead
+        document.body.classList.add('boot-fast');
+        boot.classList.add('boot-skip');
+    }
+
+    // Drop the overlay from the DOM once its hide animation is over
+    setTimeout(() => boot.remove(), seen ? 700 : 2400);
+}
+
+/* ============================================================ */
+/* Custom cursor — iPadOS-style: one translucent blob that      */
+/* snaps onto compact controls and morphs into their shape      */
+/* ============================================================ */
+
+function setupCustomCursor() {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (reduceMotion || !finePointer) return;
+
+    const blob = document.createElement('div');
+    blob.id = 'cursor-blob';
+    blob.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(blob);
+    document.documentElement.classList.add('custom-cursor');
+
+    const SIZE = 22;        // resting circle diameter
+    const FOLLOW = 30;      // 1/s — quick, near-1:1 like iPadOS
+    const HOVER_SELECTOR = 'a, button, input, textarea, select, [onclick]';
+
+    let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+    let x = mx, y = my;
+    let rafId = null;
+    let lastTime = 0;
+    let shown = false;
+    let hoverEl = null;
+
+    // Only compact controls get the snap-morph — large cards keep the blob
+    const morphTarget = (node) => {
+        if (!(node instanceof Element)) return null;
+        const el = node.closest(HOVER_SELECTOR);
+        if (!el) return null;
+        const r = el.getBoundingClientRect();
+        if (r.width > 420 || r.height > 110 || r.width < 8) return null;
+        return el;
+    };
+
+    const tick = (now) => {
+        const dt = lastTime ? Math.min(0.1, (now - lastTime) / 1000) : 1 / 60;
+        lastTime = now;
+        const a = 1 - Math.exp(-FOLLOW * dt);
+
+        let tx = mx, ty = my;
+        if (hoverEl) {
+            // Snapped: sit on the control's center, with a gentle parallax
+            // pull toward the real pointer — the iPadOS "magnet" feel
+            const r = hoverEl.getBoundingClientRect();
+            const cx = r.left + r.width / 2;
+            const cy = r.top + r.height / 2;
+            tx = cx + (mx - cx) * 0.15;
+            ty = cy + (my - cy) * 0.22;
+        }
+
+        x += (tx - x) * a;
+        y += (ty - y) * a;
+        blob.style.setProperty('--x', x.toFixed(1) + 'px');
+        blob.style.setProperty('--y', y.toFixed(1) + 'px');
+
+        // While snapped, keep following (the control moves when scrolling)
+        const settled = !hoverEl && Math.abs(tx - x) < 0.15 && Math.abs(ty - y) < 0.15;
+        if (settled) {
+            lastTime = 0;
+            rafId = null;
+        } else {
+            rafId = requestAnimationFrame(tick);
+        }
+    };
+
+    const kick = () => { if (!rafId) rafId = requestAnimationFrame(tick); };
+
+    const setHover = (el) => {
+        if (el === hoverEl) return;
+        hoverEl = el;
+        if (el) {
+            const r = el.getBoundingClientRect();
+            const radius = parseFloat(getComputedStyle(el).borderTopLeftRadius);
+            const pad = Math.min(10, Math.max(6, r.height * 0.12));
+            blob.style.width = (r.width + pad) + 'px';
+            blob.style.height = (r.height + pad) + 'px';
+            blob.style.borderRadius = Math.min(
+                (isNaN(radius) ? 12 : radius + pad / 2),
+                (r.height + pad) / 2
+            ) + 'px';
+            document.documentElement.classList.add('cursor-morph');
+        } else {
+            blob.style.width = '';
+            blob.style.height = '';
+            blob.style.borderRadius = '';
+            document.documentElement.classList.remove('cursor-morph');
+        }
+        kick();
+    };
+
+    window.addEventListener('mousemove', (e) => {
+        mx = e.clientX;
+        my = e.clientY;
+        if (!shown) {
+            shown = true;
+            // Skip the fly-in from screen center on first contact
+            x = mx;
+            y = my;
+            document.documentElement.classList.add('cursor-visible');
+        }
+        kick();
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', () => {
+        document.documentElement.classList.remove('cursor-visible');
+    });
+    document.addEventListener('mouseenter', () => {
+        if (shown) document.documentElement.classList.add('cursor-visible');
+    });
+
+    window.addEventListener('mousedown', () => {
+        document.documentElement.classList.add('cursor-down');
+    }, { passive: true });
+    window.addEventListener('mouseup', () => {
+        document.documentElement.classList.remove('cursor-down');
+    }, { passive: true });
+
+    document.addEventListener('mouseover', (e) => {
+        setHover(morphTarget(e.target));
+    }, { passive: true });
+
+    // If the snapped control scrolls away or gets removed, release the morph
+    window.addEventListener('scroll', () => {
+        if (hoverEl && !document.contains(hoverEl)) setHover(null);
+    }, { passive: true });
+}
+
+/* ============================================================ */
+/* Scroll progress — hairline gradient bar at the very top      */
+/* ============================================================ */
+
+function setupScrollProgress() {
+    const bar = document.createElement('div');
+    bar.id = 'scroll-progress';
+    bar.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(bar);
+
+    let ticking = false;
+    const update = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const p = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+        bar.style.transform = 'scaleX(' + p.toFixed(4) + ')';
+        ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(update);
+            ticking = true;
+        }
+    }, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    update();
 }
