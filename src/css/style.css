@@ -1057,10 +1057,27 @@ button {
     margin-top: 5rem;
     padding: 0 1rem 2.2rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2.4rem;
     background: none;
     border: none;
+}
+
+/* WebByte Studio Tag — eigene, zentrierte Reihe unter der Footer-Pille.
+   Der Badge ist als volle-Breite-Karte gebaut (studio-badge.css von
+   tag.timonsh.dev), daher hier nur begrenzen/zentrieren statt in die
+   Flex-Reihe der Pille zu quetschen. */
+.footer-tag {
+    width: 100%;
+    max-width: 680px;
+}
+
+.footer-tag .studio-badge {
+    /* Der Default-Abstand des Badges (margin-top: 4.5rem) gilt der Nutzung
+       im Impressum-Fließtext; im Footer übernimmt der Flex-gap den Abstand. */
+    margin-top: 0 !important;
 }
 
 .footer-pill {
