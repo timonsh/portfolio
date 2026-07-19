@@ -905,7 +905,11 @@ function setupCustomCursor() {
     }, { passive: true });
 
     document.addEventListener('mouseover', (e) => {
-        setHover(morphTarget(e.target));
+        // Inside the WebByte Studio Tag its own custom cursor takes over:
+        // hide the site blob and don't snap-morph onto the badge's controls.
+        const inBadge = e.target instanceof Element && e.target.closest('.studio-badge');
+        document.documentElement.classList.toggle('cursor-in-badge', !!inBadge);
+        setHover(inBadge ? null : morphTarget(e.target));
     }, { passive: true });
 
     // If the snapped control scrolls away or gets removed, release the morph

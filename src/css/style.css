@@ -3591,6 +3591,31 @@ html.cursor-down #cursor-blob {
     background: rgba(255, 255, 255, 0.32);
 }
 
+/* Der WebByte Studio Tag bringt seinen eigenen Cursor mit (--wbs-cursor /
+   --wbs-cursor-link, definiert in studio-badge.css). Der globale
+   `cursor: none` der Site darf dort NICHT greifen — sonst verschwindet der
+   Badge-Cursor. Daher innerhalb des Badges dessen eigenen Cursor erzwingen. */
+html.custom-cursor .studio-badge,
+html.custom-cursor .studio-badge * {
+    cursor: var(--wbs-cursor, auto) !important;
+}
+
+html.custom-cursor .studio-badge a,
+html.custom-cursor .studio-badge button,
+html.custom-cursor .studio-badge [href],
+html.custom-cursor .studio-badge__brand,
+html.custom-cursor .studio-badge__logo,
+html.custom-cursor .studio-badge__avatar,
+html.custom-cursor .studio-badge__dot {
+    cursor: var(--wbs-cursor-link, pointer) !important;
+}
+
+/* Über dem Badge gilt dessen eigener Cursor — den Site-Blob dort ausblenden
+   (Klasse wird in setupCustomCursor beim Hover über .studio-badge gesetzt). */
+html.cursor-in-badge #cursor-blob {
+    opacity: 0 !important;
+}
+
 /* ============================================================ */
 /* === Cookie consent banner (glass card, bottom center) ====== */
 /* ============================================================ */
