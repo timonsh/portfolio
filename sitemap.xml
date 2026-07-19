@@ -2,20 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://timonsh.dev</loc>
-        <lastmod>2026-07-17</lastmod>
+        <lastmod>2026-07-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://timonsh.dev/impressum</loc>
-        <lastmod>2026-07-17</lastmod>
+        <lastmod>2026-07-19</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://timonsh.dev/404</loc>
-        <lastmod>2026-07-17</lastmod>
+        <lastmod>2026-07-19</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.1</priority>
+    </url>
+
+    <!-- Subdomains / Projekt-Sites. Hinweis: Laut Sitemap-Protokoll sollten
+         URLs auf demselben Host wie die Sitemap liegen; Subdomains sind
+         eigene Hosts und werden ggf. ignoriert. Sauberer waere je eine
+         eigene sitemap.xml pro Subdomain (Sitemap-Index). -->
+    <url>
+        <loc>https://mshift.timonsh.dev/</loc>
+        <lastmod>2026-07-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://ghostcrypt.timonsh.dev/</loc>
+        <lastmod>2026-07-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fwgbsp.timonsh.dev/</loc>
+        <lastmod>2026-07-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://dunklegeschichten.timonsh.dev/</loc>
+        <lastmod>2026-07-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>
