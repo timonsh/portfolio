@@ -4,7 +4,7 @@
 
 const meta = {
     id: 'timonsh',
-    version: 'v3.0.0',
+    version: 'v3.1.0',
     name: 'Timon Schroth [timonsh] · WebByte Studio',
     creator: 'webbytestudio',
 };
@@ -40,8 +40,11 @@ function preview_image(event, img_src) {
 /* Navigation */
 
 document.addEventListener('DOMContentLoaded', () => {
-    /* Boot screen: full webbyteOS boot only once per session */
+    /* Boot screen: full webbyteOS boot plays on every load */
     setupBootScreen();
+
+    /* Age: fill any [data-birthdate] from the current date — never goes stale */
+    setupDynamicAge();
 
     const navLinks = document.querySelectorAll('#navigation .nav-link');
     const sections = [];
@@ -725,7 +728,19 @@ function buildConsentBanner() {
     return banner;
 }
 
+// Shared so a reopen can cancel an in-flight removal (see below)
+let bannerRemoveTimer = null;
+
 function showConsentBanner() {
+    // A hide() may be mid-flight: the banner is fading out and already
+    // scheduled for removal. Cancel that — otherwise tapping "Cookies" in
+    // the footer right after a choice would rebuild the banner only for the
+    // old timer to yank it straight back out ("nothing happens").
+    if (bannerRemoveTimer) {
+        clearTimeout(bannerRemoveTimer);
+        bannerRemoveTimer = null;
+    }
+
     let banner = document.getElementById('cookie-banner');
     if (!banner) {
         banner = buildConsentBanner();
@@ -739,7 +754,11 @@ function hideConsentBanner() {
     const banner = document.getElementById('cookie-banner');
     if (!banner) return;
     banner.classList.remove('show');
-    setTimeout(() => banner.remove(), 600);
+    if (bannerRemoveTimer) clearTimeout(bannerRemoveTimer);
+    bannerRemoveTimer = setTimeout(() => {
+        banner.remove();
+        bannerRemoveTimer = null;
+    }, 600);
 }
 
 /* Global — reopens the banner; wired to the "Cookies" footer button via inline onclick */
@@ -768,20 +787,37 @@ function setupBootScreen() {
     const boot = document.getElementById('boot-screen');
     if (!boot) return;
 
-    let seen = false;
-    try {
-        seen = sessionStorage.getItem('wbs-booted') === '1';
-        sessionStorage.setItem('wbs-booted', '1');
-    } catch (e) { /* storage blocked — always play the full boot */ }
+    // The full webbyteOS boot plays on every load (pure-CSS timeline in
+    // style.css). We only need to drop the overlay once its hide animation
+    // is done so it can never sit on top of the page and trap clicks.
+    setTimeout(() => boot.remove(), 2350);
+}
 
-    if (seen) {
-        // Within the same session: skip the boot, run the short intro instead
-        document.body.classList.add('boot-fast');
-        boot.classList.add('boot-skip');
+/* ============================================================ */
+/* Dynamic age — computed from a birthdate, so the copy is       */
+/* always correct without anyone ever editing it                 */
+/* ============================================================ */
+
+function ageFromBirthdate(birthISO) {
+    const birth = new Date(birthISO + 'T00:00:00');
+    if (isNaN(birth.getTime())) return null;
+    const now = new Date();
+    let age = now.getFullYear() - birth.getFullYear();
+    const monthDiff = now.getMonth() - birth.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < birth.getDate())) {
+        age--;
     }
+    return age;
+}
 
-    // Drop the overlay from the DOM once its hide animation is over
-    setTimeout(() => boot.remove(), seen ? 700 : 2400);
+function setupDynamicAge() {
+    document.querySelectorAll('[data-birthdate]').forEach((el) => {
+        const age = ageFromBirthdate(el.getAttribute('data-birthdate'));
+        // Only overwrite with a sane value; otherwise keep the HTML fallback
+        if (age !== null && age > 0 && age < 130) {
+            el.textContent = String(age);
+        }
+    });
 }
 
 /* ============================================================ */

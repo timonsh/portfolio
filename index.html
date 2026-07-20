@@ -105,15 +105,26 @@
 
 <body class="boot">
 
-    <!-- Boot screen (webbyteOS) — pure CSS timeline, plays fully once per
-         session; setupBootScreen() in main.js skips it on revisits -->
+    <!-- Boot screen (webbyteOS) — pure CSS timeline, plays fully on every
+         load; setupBootScreen() in main.js only drops it from the DOM -->
     <div id="boot-screen" aria-hidden="true">
+        <div class="boot-scanlines"></div>
         <div class="boot-inner">
-            <img src="./src/assets/img/webbytestudio-small.png" alt="">
+            <div class="boot-logo">
+                <span class="boot-logo-ring"></span>
+                <img src="./src/assets/img/webbytestudio-small.png" alt="">
+            </div>
+            <div class="boot-console">
+                <span class="boot-line"><b>[timonsh&nbsp;~]</b>&nbsp;$ boot timonsh.dev</span>
+                <span class="boot-line">webbyteOS kernel <i>v3.1</i> … <s>ok</s></span>
+                <span class="boot-line">mounting /assets … <s>ok</s></span>
+                <span class="boot-line">loading fonts &amp; ui … <s>ok</s></span>
+                <span class="boot-line">starting compositor … <s>ok</s></span>
+            </div>
             <div class="boot-progress">
                 <div class="boot-progress-fill"></div>
             </div>
-            <span class="boot-caption">[timonsh&nbsp;~]&nbsp;$ boot timonsh.dev</span>
+            <span class="boot-caption">welcome, Timon<span class="boot-cursor"></span></span>
         </div>
     </div>
 
@@ -410,7 +421,7 @@
 
             <p class="important-text animate-on-scroll">
 
-                Ich bin <span class="highlight">Timon</span>, 15 Jahre alt und wohne in Klein Lengden nahe Göttingen.
+                Ich bin <span class="highlight">Timon</span>, <span data-birthdate="2010-06-06">16</span> Jahre alt und wohne in Klein Lengden nahe Göttingen.
                 Ich gehe auf das
                 <span class="highlight">Max-Planck-Gymnasium</span> in
                 Göttingen und bin dort in der 10. Klasse.
